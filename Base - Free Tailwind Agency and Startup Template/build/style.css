@@ -33,6 +33,22 @@
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
+*{
+  /* background-color: #182140; */
+  color:white;
+}
+
+header{
+
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxO2qHQjC5CH2l9sAqJp0Qh74RBEJL69I7HacsuyIB4Q&s");
+}
+body{
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxO2qHQjC5CH2l9sAqJp0Qh74RBEJL69I7HacsuyIB4Q&s");
+  background-attachment: fixed;
+
+ 
+
+}
 
 *,
 ::before,
@@ -405,13 +421,13 @@ video {
 
 body{
   position: relative;
-  z-index: 1;
+  z-index: 100;
   font-family: Inter, sans-serif;
   font-size: 16px;
   line-height: 26px;
   font-weight: 400;
   --tw-text-opacity: 1;
-  color: rgb(121 128 138 / var(--tw-text-opacity));
+  color: "#212121;
 }
 
 h1,  h2,  h3,  h4,  h5,  h6{
