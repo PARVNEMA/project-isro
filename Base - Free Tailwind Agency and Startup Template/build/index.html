@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Base - Tailwind CSS Startup Template</title>
+    <title>Space Safari</title>
   <link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
   <body
+    
     x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
     x-init="
          darkMode = JSON.parse(localStorage.getItem('darkMode'));
@@ -24,8 +25,7 @@
   <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
     <div class="vd to/4 tc wf yf">
       <a href="index.html">
-        <img class="om" src="images/logo-light.svg" alt="Logo Light" />
-        <img class="xc nm" src="images/logo-dark.svg" alt="Logo Dark" />
+        <h1>Space Safari</hs1>
       </a>
 
       <!-- Hamburger Toggle BTN -->
@@ -52,30 +52,17 @@
       <nav>
         <ul class="tc _o sf yo cg ep">
           <li><a href="index.html" class="xl" :class="{ 'mk': page === 'home' }">Home</a></li>
-          <li><a href="index.html#features" class="xl">Features</a></li>
+          <li><a href="blog-grid.html" class="xl" :class="{ 'mk': page === 'blog-grid' }">Blog Grid</a></li>
+          <li><a href="blog-single.html" class="xl" :class="{ 'mk': page === 'blog-single' }">Blog Single</a></li>
+          <li><a href="signin.html" class="xl" :class="{ 'mk': page === 'signin' }">Sign In</a></li>
+          <li><a href="signup.html" class="xl" :class="{ 'mk': page === 'signup' }">Sign Up</a></li>
+          <li><a href="404.html" class="xl" :class="{ 'mk': page === '404' }">404</a></li>
           <li class="c i" x-data="{ dropdown: false }">
-            <a
-              href="#"
-              class="xl tc wf yf bg"
-              @click.prevent="dropdown = !dropdown"
-              :class="{ 'mk': page === 'blog-grid' || page === 'blog-single' || page === 'signin' || page === 'signup' || page === '404' }"
-            >
-              Pages
 
-              <svg
-              :class="{ 'wh': dropdown }"
-              class="th mm we fd pf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-              </svg>
-            </a>
 
             <!-- Dropdown Start -->
             <ul class="a" :class="{ 'tc': dropdown }">
-              <li><a href="blog-grid.html" class="xl" :class="{ 'mk': page === 'blog-grid' }">Blog Grid</a></li>
-              <li><a href="blog-single.html" class="xl" :class="{ 'mk': page === 'blog-single' }">Blog Single</a></li>
-              <li><a href="signin.html" class="xl" :class="{ 'mk': page === 'signin' }">Sign In</a></li>
-              <li><a href="signup.html" class="xl" :class="{ 'mk': page === 'signup' }">Sign Up</a></li>
-              <li><a href="404.html" class="xl" :class="{ 'mk': page === '404' }">404</a></li>
+
             </ul>
             <!-- Dropdown End -->
           </li>
@@ -110,11 +97,11 @@
       <section class="gj do ir hj sp jr i pg">
         <!-- Hero Images -->
         <div class="xc fn zd/2 2xl:ud-w-187.5 bd 2xl:ud-h-171.5 h q r">
-          <img src="images/shape-01.svg" alt="shape" class="xc 2xl:ud-block h t -ud-left-[10%] ua" />
-          <img src="images/shape-02.svg" alt="shape" class="xc 2xl:ud-block h u p va" />
-          <img src="images/shape-03.svg" alt="shape" class="xc 2xl:ud-block h v w va" />
-          <img src="images/shape-04.svg" alt="shape" class="h q r" />
-          <img src="images/hero.png" alt="Woman" class="h q r ua" />
+          <!-- <img src="images/shape-01.svg" alt="shape" class="xc 2xl:ud-block h t -ud-left-[10%] ua" /> -->
+          <!-- <img src="images/shape-02.svg" alt="shape" class="xc 2xl:ud-block h u p va" /> -->
+          <!-- <img src="images/shape-03.svg" alt="shape" class="xc 2xl:ud-block h v w va" /> -->
+          <!-- <img src="images/shape-04.svg" alt="shape" class="h q r" /> -->
+          <!-- <img src="images/hero.png" alt="Woman" class="h q r ua" /> -->
         </div>
 
         <!-- Hero Content -->
