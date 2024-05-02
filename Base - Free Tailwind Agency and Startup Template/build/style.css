@@ -40,12 +40,13 @@
 
 header{
 
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxO2qHQjC5CH2l9sAqJp0Qh74RBEJL69I7HacsuyIB4Q&s");
+  background-image: url("https://wallpapercave.com/wp/wp12671410.jpg");
 }
 body{
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxO2qHQjC5CH2l9sAqJp0Qh74RBEJL69I7HacsuyIB4Q&s");
+  background-image: url("https://wallpapercave.com/wp/wp12671410.jpg");
   background-attachment: fixed;
-
+  background-size: 100%;
+  
  
 
 }
