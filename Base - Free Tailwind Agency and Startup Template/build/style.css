@@ -40,7 +40,7 @@
 
 header{
 
-  background-image: url("https://wallpapercave.com/wp/wp12671410.jpg");
+  /* background-image: url("https://wallpapercave.com/wp/wp12671410.jpg"); */
 }
 body{
   background-image: url("https://wallpapercave.com/wp/wp12671410.jpg");
@@ -1345,10 +1345,11 @@ h1,  h2,  h3,  h4,  h5,  h6{
 }
 .hh\/20{
   background-color: rgb(255 255 255 / 0.2);
+  
 }
 .hh{
   --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  background-color: black;
 }
 .ih{
   --tw-bg-opacity: 1;
@@ -1650,12 +1651,10 @@ h1,  h2,  h3,  h4,  h5,  h6{
   line-height: 1.75rem;
 }
 .kk{
-  --tw-text-opacity: 1;
-  color: rgb(24 28 49 / var(--tw-text-opacity));
+  color:"#FFFFFF";
 }
 .lk{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+ color:"#FFFFFF";
 }
 .mk{
   --tw-text-opacity: 1;
@@ -1943,7 +1942,7 @@ h1,  h2,  h3,  h4,  h5,  h6{
 
 .b .sm{
   --tw-bg-opacity: 1;
-  background-color: rgb(24 28 49 / var(--tw-bg-opacity));
+  background-color: black;
 }
 
 .b .tm{
