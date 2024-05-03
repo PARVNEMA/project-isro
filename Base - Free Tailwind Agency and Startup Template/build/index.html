@@ -8,6 +8,8 @@
     <title>Space Safari</title>
   <link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  
 </head>
   <body
 
@@ -20,96 +22,99 @@
     <!-- ===== Header Start ===== -->
     <div >
     <header
-  class="g s r vd ya cj  "
+    class="g s r vd ya cj  "
+    
+    :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
+    @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
+  >
+    <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
+      <div class="vd to/4 tc wf yf">
+        <a href="index.html">
+          <h1 style="font-size: xx-large;">Space Safari</h1>
+        </a>
   
-  :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
-  @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
->
-  <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
-    <div class="vd to/4 tc wf yf">
-      <a href="index.html">
-        <h1 style="font-size: xx-large;">Space Safari</h1>
-      </a>
-
-      <!-- Hamburger Toggle BTN -->
-      <button class="po rc" @click="navigationOpen = !navigationOpen">
-        <span class="rc i pf re pd">
-          <span class="du-block h q vd yc">
-            <span class="rc i r s eh um tg te rd eb ml jl dl" :class="{ 'ue el': !navigationOpen }"></span>
-            <span class="rc i r s eh um tg te rd eb ml jl fl" :class="{ 'ue qr': !navigationOpen }"></span>
-            <span class="rc i r s eh um tg te rd eb ml jl gl" :class="{ 'ue hl': !navigationOpen }"></span>
+        <!-- Hamburger Toggle BTN -->
+        <button class="po rc" @click="navigationOpen = !navigationOpen">
+          <span class="rc i pf re pd">
+            <span class="du-block h q vd yc">
+              <span class="rc i r s eh um tg te rd eb ml jl dl" :class="{ 'ue el': !navigationOpen }"></span>
+              <span class="rc i r s eh um tg te rd eb ml jl fl" :class="{ 'ue qr': !navigationOpen }"></span>
+              <span class="rc i r s eh um tg te rd eb ml jl gl" :class="{ 'ue hl': !navigationOpen }"></span>
+            </span>
+            <span class="du-block h q vd yc lf">
+              <span class="rc eh um tg ml jl el h na r ve yc" :class="{ 'sd dl': !navigationOpen }"></span>
+              <span class="rc eh um tg ml jl qr h s pa vd rd" :class="{ 'sd rr': !navigationOpen }"></span>
+            </span>
           </span>
-          <span class="du-block h q vd yc lf">
-            <span class="rc eh um tg ml jl el h na r ve yc" :class="{ 'sd dl': !navigationOpen }"></span>
-            <span class="rc eh um tg ml jl qr h s pa vd rd" :class="{ 'sd rr': !navigationOpen }"></span>
-          </span>
-        </span>
-      </button>
-      <!-- Hamburger Toggle BTN -->
-    </div>
-
-    <div
-      class="vd wo/4 sd qo f ho oo wf yf"
-      :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }"
-    >
-      <div class="flex flex-row">
-        <ul class="tc _o sf yo cg ep">
-          <li><a href="index.html" class="xl" :class="{ 'mk': page === 'home' }" style="padding-left: 8rem;">Home</a></li>
-          <li><a href="blog-grid.html" class="xl" :class="{ 'mk': page === 'blog-grid' }">Blog Grid</a></li>
-          <li><a href="blog-single.html" class="xl" :class="{ 'mk': page === 'blog-single' }">Blog Single</a></li>
-          <!-- <li><a href="signin.html" class="xl" :class="{ 'mk': page === 'signin' }">Sign In</a></li> -->
-          <!-- <li><a href="signup.html" class="xl" :class="{ 'mk': page === 'signup' }">Sign Up</a></li> -->
-          <li><a href="Model.html" class="xl" :class="{ 'mk': page === '404' }">Model</a></li>
-          <li class="c i" x-data="{ dropdown: false }">
-
-
-            <!-- Dropdown Start -->
-            <ul class="a" :class="{ 'tc': dropdown }">
-
-            </ul>
-            <!-- Dropdown End -->
-          </li>
-          <!-- <li><a href="index.html#support" class="xl">Support</a></li> -->
-        </ul>
-      </div class="flex flex-row">
-
-      <div class="tc wf ig pb no">
-        <!-- <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">
-          <label class="rc ab i">
-            <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode" class="pf vd yc uk h r za ab" />
-            <!-- Icon Sun -->
-            <!-- <svg :class="{ 'wn' : page === 'home', 'xh' : page === 'home' && stickyMenu }" class="th om" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12.0908 18.6363C10.3549 18.6363 8.69 17.9467 7.46249 16.7192C6.23497 15.4916 5.54537 13.8268 5.54537 12.0908C5.54537 10.3549 6.23497 8.69 7.46249 7.46249C8.69 6.23497 10.3549 5.54537 12.0908 5.54537C13.8268 5.54537 15.4916 6.23497 16.7192 7.46249C17.9467 8.69 18.6363 10.3549 18.6363 12.0908C18.6363 13.8268 17.9467 15.4916 16.7192 16.7192C15.4916 17.9467 13.8268 18.6363 12.0908 18.6363ZM12.0908 16.4545C13.2481 16.4545 14.358 15.9947 15.1764 15.1764C15.9947 14.358 16.4545 13.2481 16.4545 12.0908C16.4545 10.9335 15.9947 9.8236 15.1764 9.00526C14.358 8.18692 13.2481 7.72718 12.0908 7.72718C10.9335 7.72718 9.8236 8.18692 9.00526 9.00526C8.18692 9.8236 7.72718 10.9335 7.72718 12.0908C7.72718 13.2481 8.18692 14.358 9.00526 15.1764C9.8236 15.9947 10.9335 16.4545 12.0908 16.4545ZM10.9999 0.0908203H13.1817V3.36355H10.9999V0.0908203ZM10.9999 20.8181H13.1817V24.0908H10.9999V20.8181ZM2.83446 4.377L4.377 2.83446L6.69082 5.14828L5.14828 6.69082L2.83446 4.37809V4.377ZM17.4908 19.0334L19.0334 17.4908L21.3472 19.8046L19.8046 21.3472L17.4908 19.0334ZM19.8046 2.83337L21.3472 4.377L19.0334 6.69082L17.4908 5.14828L19.8046 2.83446V2.83337ZM5.14828 17.4908L6.69082 19.0334L4.377 21.3472L2.83446 19.8046L5.14828 17.4908ZM24.0908 10.9999V13.1817H20.8181V10.9999H24.0908ZM3.36355 10.9999V13.1817H0.0908203V10.9999H3.36355Z" fill=""/>
-            </svg>
-            <!-- Icon Sun -->
-            <!-- <img class="xc nm" src="images/icon-moon.svg" alt="Moon" />
-          </label>
-        </div> -->
-
-        <a href="signin.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Sign In</a>
-        <a href="signup.html" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Sign Up</a>
+        </button>
+        <!-- Hamburger Toggle BTN -->
+      </div>
+  
+      <div
+        class="vd wo/4 sd qo f ho oo wf yf"
+        :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }"
+      >
+        <div class="flex flex-row">
+          <ul class="tc _o sf yo cg ep">
+            <li><a href="index.html" class="xl" :class="{ 'mk': page === 'home' }" style="padding-left: 8rem;">Home</a></li>
+            <li><a href="blog-grid.html" class="xl" :class="{ 'mk': page === 'blog-grid' }">Blog Grid</a></li>
+            <li><a href="blog-single.html" class="xl" :class="{ 'mk': page === 'blog-single' }">Blog Single</a></li>
+            <!-- <li><a href="signin.html" class="xl" :class="{ 'mk': page === 'signin' }">Sign In</a></li> -->
+            <!-- <li><a href="signup.html" class="xl" :class="{ 'mk': page === 'signup' }">Sign Up</a></li> -->
+            <li><a href="Model.html" class="xl" :class="{ 'mk': page === '404' }">Model</a></li>
+            <li class="c i" x-data="{ dropdown: false }">
+  
+  
+              <!-- Dropdown Start -->
+              <ul class="a" :class="{ 'tc': dropdown }">
+  
+              </ul>
+              <!-- Dropdown End -->
+            </li>
+            <!-- <li><a href="index.html#support" class="xl">Support</a></li> -->
+          </ul>
+        </div class="flex flex-row">
+  
+        <div class="tc wf ig pb no">
+          <!-- <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">
+            <label class="rc ab i">
+              <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode" class="pf vd yc uk h r za ab" />
+              <!-- Icon Sun -->
+              <!-- <svg :class="{ 'wn' : page === 'home', 'xh' : page === 'home' && stickyMenu }" class="th om" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.0908 18.6363C10.3549 18.6363 8.69 17.9467 7.46249 16.7192C6.23497 15.4916 5.54537 13.8268 5.54537 12.0908C5.54537 10.3549 6.23497 8.69 7.46249 7.46249C8.69 6.23497 10.3549 5.54537 12.0908 5.54537C13.8268 5.54537 15.4916 6.23497 16.7192 7.46249C17.9467 8.69 18.6363 10.3549 18.6363 12.0908C18.6363 13.8268 17.9467 15.4916 16.7192 16.7192C15.4916 17.9467 13.8268 18.6363 12.0908 18.6363ZM12.0908 16.4545C13.2481 16.4545 14.358 15.9947 15.1764 15.1764C15.9947 14.358 16.4545 13.2481 16.4545 12.0908C16.4545 10.9335 15.9947 9.8236 15.1764 9.00526C14.358 8.18692 13.2481 7.72718 12.0908 7.72718C10.9335 7.72718 9.8236 8.18692 9.00526 9.00526C8.18692 9.8236 7.72718 10.9335 7.72718 12.0908C7.72718 13.2481 8.18692 14.358 9.00526 15.1764C9.8236 15.9947 10.9335 16.4545 12.0908 16.4545ZM10.9999 0.0908203H13.1817V3.36355H10.9999V0.0908203ZM10.9999 20.8181H13.1817V24.0908H10.9999V20.8181ZM2.83446 4.377L4.377 2.83446L6.69082 5.14828L5.14828 6.69082L2.83446 4.37809V4.377ZM17.4908 19.0334L19.0334 17.4908L21.3472 19.8046L19.8046 21.3472L17.4908 19.0334ZM19.8046 2.83337L21.3472 4.377L19.0334 6.69082L17.4908 5.14828L19.8046 2.83446V2.83337ZM5.14828 17.4908L6.69082 19.0334L4.377 21.3472L2.83446 19.8046L5.14828 17.4908ZM24.0908 10.9999V13.1817H20.8181V10.9999H24.0908ZM3.36355 10.9999V13.1817H0.0908203V10.9999H3.36355Z" fill=""/>
+              </svg>
+              <!-- Icon Sun -->
+              <!-- <img class="xc nm" src="images/icon-moon.svg" alt="Moon" />
+            </label>
+          </div> -->
+  
+          <a href="signin.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Sign In</a>
+          <a href="signup.html" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Sign Up</a>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
+<!-- ===== Header End ===== -->
 
-    <!-- ===== Header End ===== -->
-    <main>
-      <!-- ===== Hero Start ===== -->
-      <section class="gj do ir hj sp jr i pg  ">
-        <!-- Hero Images -->
-        
-        <!-- Hero Content -->
-        <div class="flex justify-center align-center w-full ">
-          <div class="tc _o w-full flex justify-center align-center animate_left backdrop-opacity-10 " style="padding-top: 12rem">
-            <a href="3D.html" class="ek jk lk gh gi hi rg ml il vc _d _l p-5 border border-gray-500  ">Get Started Now </a>
-          </div>
-        </div>
-      </section>
+<!-- ===== Hero Start ===== -->
+<div class="w-screen">
+  <div style="top: 0; height: 670px;">
+    <!-- <section class="gj do ir hj sp jr i pg h-[100vh] w-[100vw] pt-2 " > -->
+      <video  autoplay loop muted poster="video/Solar System Movement (1).mp4" class="w-full h-full object-cover ">
+        <source src="video/Solar System Movement (1).mp4" type="video/mp4">
+      </video>
+      <div class="flex justify-center align-center w-full ">
+        <div style="position: absolute; top: 20rem;" class="tc _o w-full flex justify-center align-center animate_left backdrop-opacity-10 " style="padding-top: 12rem">
+          <a href="3D.html" class="ek jk lk gh gi hi rg ml il vc _d _l p-5 border border-gray-500  ">Get Started Now </a>
+         </div>           
+      </div>
+        <!-- </section> -->
+  </div>  
+</div>
       <!-- ===== Hero End ===== -->
 
       <!-- ===== Small Features Start ===== -->
-      <section id="features">
+      <section id="features" style="margin-top: 3rem;">
         <div class="bb ze ki yn 2xl:ud-px-12.5">
           <div class="tc uf zo xf ap zf bp mq">
             <!-- Small Features Item -->
@@ -119,7 +124,7 @@
               </div>
               <div>
                 <h4 class="ek yj go kk wm xb">Immerse Experience</h4>
-                <p>Lorem ipsum dolor sit amet conse adipiscing elit.</p>
+                <p>Give you 3D view of solar system</p>
               </div>
             </div>
 
@@ -132,7 +137,7 @@
                 <h4 class="ek yj go kk wm xb">
                   Learning
                 </h4>
-                <p>Lorem ipsum dolor sit amet conse adipiscing elit.</p>
+                <p>Give you the learning of Space Missions and programs</p>
               </div>
             </div>
 
@@ -143,7 +148,7 @@
               </div>
               <div>
                 <h4 class="ek yj go kk wm xb">Exploration</h4>
-                <p>Parv nema ipsum dolor sit amet conse adipiscing elit.</p>
+                <p>Explore Space with wide range of informations</p>
               </div>
             </div>
           </div>
@@ -152,7 +157,7 @@
       <!-- ===== Small Features End ===== -->
 
       <!-- ===== About Start ===== -->
-      <section class="ji gp uq 2xl:ud-py-35 pg">
+      <section class="ji gp uq 2xl:ud-py-35 pg" style="margin-bottom: 0rem; padding-bottom: 1rem;">
         <div class="bb ze ki xn wq">
           <div class="tc wf gg qq">
             <!-- About Images -->
@@ -171,16 +176,16 @@
 
             <!-- About Content -->
             <div class="animate_right jn/2">
-              <h4 class="ek yj mk gb">Why Choose Us</h4>
-              <h2 class="fk vj zp pr kk wm qb">We Make Our customers happy by giving Best services.</h2>
-              <p class="uo">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.</p>
+              <h4 class="ek yj mk gb">Welcome !</h4>
+              <h2 class="fk vj zp pr kk wm qb">🚀  Uncover the Cosmos with Space Safari!  ✨</h2>
+              <p class="uo">The solar system has one star, eight planets, five dwarf planets, at least 290 moons, more than 1.3 million asteroids, and about 3,900 comets.. Our solar system orbits the center of the galaxy at about 515,000 mph (828,000 kph). It takes about 230 million years to complete one orbit around the galactic center. Experience Earth, our solar system, nearby asteroids, the universe, and the spacecraft exploring them with immersive real-time 3D web-based apps. Start exploring your solar system now!</p>
 
-              <a href="https://www.youtube.com/watch?v=xcJtL7QggTI" data-fslightbox class="vc wf hg mb">
+              <a href="https://www.youtube.com/watch?v=lcZTcfdZ3Ow&pp=ygUNc29sYXIgc3lzdGVtIA%3D%3D" data-fslightbox class="vc wf hg mb">
                 <span class="tc wf xf be dd rg i gh ua">
                   <span class="nf h vc yc vd rg gh qk -ud-z-1"></span>
                   <img src="images/icon-play.svg" alt="Play" />
                 </span>
-                <span class="kk">SEE HOW WE WORK</span>
+                <span class="kk">LEARN MORE</span>
               </a>
             </div>
           </div>
@@ -192,10 +197,7 @@
       <section class="i pg ji gp uq">
         <!-- Bg Shapes -->
         <span class="rc h s r vd fd/5 fh rm"></span>
-        <img src="images/shape-08.svg" alt="Shape Bg" class="h q r" />
-        <img src="images/shape-09.svg" alt="Shape" class="of h y z/2" />
-        <img src="images/shape-10.svg" alt="Shape" class="h _ aa" />
-        <img src="images/shape-11.svg" alt="Shape" class="of h m ba" />
+        
 
         <!-- Section Title Start -->
         <div
@@ -214,12 +216,13 @@
         </div>
         <!-- Section Title End -->
 
-        <div class="bb ze i va ki xn xq jb jo">
+        <div class="bb ze i va ki xn xq jb jo" style="margin-top: 0;">
+          <h1 style="font-size:4rem; padding-left: 4rem; padding-bottom: 3rem;">Incredible Space Achievements🛰️</h1>
           <div class="wc qf pn xo gg cp">
             <!-- Team Item -->
             <div class="animate_top rj">
-              <div class="c i pg z-1">
-                <img class="vd" src="images/team-01.png" alt="Team" />
+              <div class="c i pg z-1 animate-none" style="padding-top: 0; margin-top: 0;">
+                <img class="vd" src="https://science.nasa.gov/wp-content/uploads/2017/12/voyager.png?w=4096&format=png" alt="Space Program" />
 
                 <div class="ef im nl il">
                   <span class="h -ud-left-5 -ud-bottom-21 rc de gd gh if wa"></span>
@@ -252,14 +255,14 @@
                 </div>
               </div>
 
-              <h4 class="yj go kk wm ob zb">Olivia Andrium</h4>
-              <p>Product Manager</p>
+              <h4 class="yj go kk wm ob zb">voyager 1</h4>
+              <p>Space Program</p>
             </div>
 
             <!-- Team Item -->
             <div class="animate_top rj">
               <div class="c i pg z-1">
-                <img class="vd" src="images/team-02.png" alt="Team" />
+                <img class="vd" src="https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2023/08/chandrayaan-3-5-1691547437.jpg" alt="Space progarm" />
 
                 <div class="ef im nl il">
                   <span class="h -ud-left-5 -ud-bottom-21 rc de gd gh if wa"></span>
@@ -292,14 +295,14 @@
                 </div>
               </div>
 
-              <h4 class="yj go kk wm ob zb">Jemse Kemorun</h4>
-              <p>Product Designer</p>
+              <h4 class="yj go kk wm ob zb">Chandrayaan 3</h4>
+              <p>Lunar Mission</p>
             </div>
 
             <!-- Team Item -->
             <div class="animate_top rj">
               <div class="c i pg z-1">
-                <img class="vd" src="images/team-03.png" alt="Team" />
+                <img class="vd" src="https://i.natgeofe.com/n/36f919e0-e86f-48fa-b874-d9eabd10152c/83832_3x2.jpg" alt="Space Program" />
 
                 <div class="ef im nl il">
                   <span class="h -ud-left-5 -ud-bottom-21 rc de gd gh if wa"></span>
@@ -332,8 +335,8 @@
                 </div>
               </div>
 
-              <h4 class="yj go kk wm ob zb">Avi Pestarica</h4>
-              <p>Web Designer</p>
+              <h4 class="yj go kk wm ob zb">Mission Mangal</h4>
+              <p>Mars Mission</p>
             </div>
           </div>
         </div>
@@ -360,47 +363,48 @@
         <!-- Section Title End -->
 
         <div class="bb ze ki xn yq mb en">
+          <h1 style="font-size:4rem; padding-left: 25rem; padding-bottom: 3rem;">Features🌟</h1>
           <div class="wc qf pn xo ng">
             <!-- Service Item -->
             <div class="animate_top sg oi pi zq ml il am cn _m">
               <img src="images/icon-04.svg" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">Crafted for Startups</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <h4 class="ek zj kk wm nb _b">Level-Up your Knowledge</h4>
+              <p> Space Safari helps you to gain knowledge about space </p>
             </div>
 
             <!-- Service Item -->
             <div class="animate_top sg oi pi zq ml il am cn _m">
               <img src="images/icon-05.svg" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">High-quality Design</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <h4 class="ek zj kk wm nb _b">Interactive information cards</h4>
+              <p>Space Safari provides detail cards about the particular celestial body</p>
             </div>
 
             <!-- Service Item -->
             <div class="animate_top sg oi pi zq ml il am cn _m">
               <img src="images/icon-06.svg" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">All Essential Sections</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <h4 class="ek zj kk wm nb _b">All Space News </h4>
+              <p>Our website give latest news about space  </p>
             </div>
 
             <!-- Service Item -->
             <div class="animate_top sg oi pi zq ml il am cn _m">
               <img src="images/icon-07.svg" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">Speed Optimized</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <h4 class="ek zj kk wm nb _b"> Space Timeline</h4>
+              <p> Space Safari gives you different Timelines about space mission and program </p>
             </div>
 
             <!-- Service Item -->
             <div class="animate_top sg oi pi zq ml il am cn _m">
               <img src="images/icon-05.svg" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">Fully Customizable</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <h4 class="ek zj kk wm nb _b">Student Learning</h4>
+              <p> Space Safari targets students to learning about space</p>
             </div>
 
             <!-- Service Item -->
             <div class="animate_top sg oi pi zq ml il am cn _m">
               <img src="images/icon-06.svg" alt="Icon" />
               <h4 class="ek zj kk wm nb _b">Regular Updates</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <p> Website Updates frequently to give information about space  </p>
             </div>
           </div>
         </div>
@@ -410,11 +414,11 @@
       <!-- ===== Pricing Table Start ===== -->
       <section x-data="setup()" class="i pg fh rm ji gp uq">
         <!-- Bg Shapes -->
-        <img src="images/shape-06.svg" alt="Shape" class="h aa y" />
+        <!-- <img src="images/shape-06.svg" alt="Shape" class="h aa y" />
         <img src="images/shape-03.svg" alt="Shape" class="h ca u" />
         <img src="images/shape-07.svg" alt="Shape" class="h w da ee" />
         <img src="images/shape-12.svg" alt="Shape" class="h p s" />
-        <img src="images/shape-13.svg" alt="Shape" class="h r q" />
+        <img src="images/shape-13.svg" alt="Shape" class="h r q" /> -->
 
         <!-- Section Title Start -->
         <div
@@ -433,7 +437,7 @@
         </div>
         <!-- Section Title End -->
 
-        <!-- Pricing switcher -->
+        Pricing switcher -->
         <div class="tc wf xf jb og">
           <span class="ek kk wm">Bill Monthly</span>
           <button class="i rg gm" x-cloak @click="billPlan == 'monthly' ? billPlan = 'annually' : billPlan = 'monthly'">
@@ -465,7 +469,7 @@
 
                 <p class="ur dc">No credit card required</p>
 
-                <!-- Button -->
+                <!-- Button
                 <a
                   href="#"
                   class="ek rg lk ml il gi ri"
@@ -663,7 +667,7 @@
 
         <div class="bb ze ki xn ar">
           <div class="animate_top jb cq">
-            <!-- Slider main container -->
+            <!-- Slider div container -->
             <div class="swiper testimonial-01">
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper">
@@ -1115,7 +1119,7 @@
 </section>
 
       <!-- ===== CTA End ===== -->
-    </main>
+    </div>
   </div>
     <!-- ===== Footer Start ===== -->
     <footer>
@@ -1344,5 +1348,7 @@
         };
       };
     </script>
-  <script defer src="bundle.js"></script></body>
+    
+  <script defer src="bundle.js"></script>
+ 
 </html>

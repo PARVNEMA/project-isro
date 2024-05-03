@@ -34,21 +34,28 @@
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
 *{
-  /* background-color: #182140; */
+  /* background-color: 	#36454F; */
   color:white;
 }
 
 header{
-
-  /* background-image: url("https://wallpapercave.com/wp/wp12671410.jpg"); */
+    background-color: none;
 }
+
+#background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
 body{
+  
   background-image: url("https://wallpapercave.com/wp/wp12671410.jpg");
   background-attachment: fixed;
   background-size: 100%;
-  
- 
-
 }
 
 *,
@@ -1336,8 +1343,7 @@ h1,  h2,  h3,  h4,  h5,  h6{
   background-color: rgb(24 28 49 / var(--tw-bg-opacity));
 }
 .fh{
-  --tw-bg-opacity: 1;
-  background-color: rgb(244 247 250 / var(--tw-bg-opacity));
+  
 }
 .gh{
   --tw-bg-opacity: 1;
@@ -1546,19 +1552,19 @@ h1,  h2,  h3,  h4,  h5,  h6{
   padding-bottom: 6.25rem;
 }
 .gj{
-  padding-top: 8.75rem;
+  padding-top: 2rem;
 }
 .hj{
   padding-bottom: 5rem;
 }
 .ij{
-  padding-top: 1.875rem;
+  padding-top: 2rem;
 }
 .jj{
   padding-bottom: 1.25rem;
 }
 .kj{
-  padding-top: 1.75rem;
+  padding-top: 2rem;
 }
 .lj{
   padding-bottom: 1.875rem;
@@ -1576,7 +1582,7 @@ h1,  h2,  h3,  h4,  h5,  h6{
   padding-top: 5rem;
 }
 .qj{
-  padding-right: 2.5rem;
+  padding-right: 0rem;
 }
 .rj{
   text-align: center;
@@ -1593,7 +1599,7 @@ h1,  h2,  h3,  h4,  h5,  h6{
   line-height: 1rem;
 }
 .vj{
-  font-size: 1.875rem;
+  font-size: 1rem;
   line-height: 2.25rem;
 }
 .wj{
@@ -1636,7 +1642,7 @@ h1,  h2,  h3,  h4,  h5,  h6{
   font-weight: 500;
 }
 .fk{
-  font-weight: 600;
+  font-weight: 200;
 }
 .gk{
   font-weight: 700;
@@ -2128,7 +2134,7 @@ h1,  h2,  h3,  h4,  h5,  h6{
   }
 
   .do{
-    padding-top: 10rem;
+    padding-top: 8rem;
   }
 
   .eo{
@@ -2349,8 +2355,8 @@ h1,  h2,  h3,  h4,  h5,  h6{
   }
 
   .zp{
-    font-size: 2.25rem;
-    line-height: 2.5rem;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
   }
 
   ._p{
@@ -2498,27 +2504,27 @@ h1,  h2,  h3,  h4,  h5,  h6{
   }
 
   .er{
-    padding-top: 15rem;
+    padding-top: 5rem;
   }
 
   .fr{
-    padding-bottom: 9.375rem;
+    padding-bottom: 2rem;
   }
 
   .gr{
-    padding-top: 12.5rem;
+    padding-top: 5rem;
   }
 
   .hr{
-    padding-bottom: 7.5rem;
+    padding-bottom: 2rem;
   }
 
   .ir{
-    padding-top: 13rem;
+    padding-top: 5rem;
   }
 
   .jr{
-    padding-bottom: 14.75rem;
+    padding-bottom: 2rem;
   }
 
   .kr{
