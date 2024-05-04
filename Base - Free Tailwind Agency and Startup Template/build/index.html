@@ -9,7 +9,7 @@
   <link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  
+
 </head>
   <body
 
@@ -23,7 +23,7 @@
     <div >
     <header
     class="g s r vd ya cj  "
-    
+
     :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
     @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
   >
@@ -32,7 +32,7 @@
         <a href="index.html">
           <h1 style="font-size: xx-large;">Space Safari</h1>
         </a>
-  
+
         <!-- Hamburger Toggle BTN -->
         <button class="po rc" @click="navigationOpen = !navigationOpen">
           <span class="rc i pf re pd">
@@ -49,7 +49,7 @@
         </button>
         <!-- Hamburger Toggle BTN -->
       </div>
-  
+
       <div
         class="vd wo/4 sd qo f ho oo wf yf"
         :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }"
@@ -63,18 +63,18 @@
             <!-- <li><a href="signup.html" class="xl" :class="{ 'mk': page === 'signup' }">Sign Up</a></li> -->
             <li><a href="Model.html" class="xl" :class="{ 'mk': page === '404' }">Model</a></li>
             <li class="c i" x-data="{ dropdown: false }">
-  
-  
+
+
               <!-- Dropdown Start -->
               <ul class="a" :class="{ 'tc': dropdown }">
-  
+
               </ul>
               <!-- Dropdown End -->
             </li>
             <!-- <li><a href="index.html#support" class="xl">Support</a></li> -->
           </ul>
         </div class="flex flex-row">
-  
+
         <div class="tc wf ig pb no">
           <!-- <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">
             <label class="rc ab i">
@@ -87,7 +87,7 @@
               <!-- <img class="xc nm" src="images/icon-moon.svg" alt="Moon" />
             </label>
           </div> -->
-  
+
           <a href="signin.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Sign In</a>
           <a href="signup.html" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Sign Up</a>
         </div>
@@ -98,7 +98,7 @@
 
 <!-- ===== Hero Start ===== -->
 <div class="w-screen">
-  <div style="top: 0; height: 670px;">
+  <div style="top: 0; height: 970px;">
     <!-- <section class="gj do ir hj sp jr i pg h-[100vh] w-[100vw] pt-2 " > -->
       <video  autoplay loop muted poster="video/Solar System Movement (1).mp4" class="w-full h-full object-cover ">
         <source src="video/Solar System Movement (1).mp4" type="video/mp4">
@@ -106,10 +106,10 @@
       <div class="flex justify-center align-center w-full ">
         <div style="position: absolute; top: 20rem;" class="tc _o w-full flex justify-center align-center animate_left backdrop-opacity-10 " style="padding-top: 12rem">
           <a href="3D.html" class="ek jk lk gh gi hi rg ml il vc _d _l p-5 border border-gray-500  ">Get Started Now </a>
-         </div>           
+         </div>
       </div>
         <!-- </section> -->
-  </div>  
+  </div>
 </div>
       <!-- ===== Hero End ===== -->
 
@@ -122,15 +122,15 @@
               <div class="tc wf xf cf ae cd rg mh">
                 <img src="images/icon-01.svg" alt="Icon" />
               </div>
-              <div>
+              <div class="transform transition duration-300 ease-in-out hover:scale-110">
                 <h4 class="ek yj go kk wm xb">Immerse Experience</h4>
                 <p>Give you 3D view of solar system</p>
               </div>
             </div>
 
             <!-- Small Features Item -->
-            <div class="animate_top kn to/3 tc cg oq">
-              <div class="tc wf xf cf ae cd rg nh">
+            <div class="animate_top kn to/3 tc cg oq transform transition duration-300 ease-in-out hover:scale-110">
+              <div class="tc wf xf cf ae cd rg nh ">
                 <img src="images/icon-02.svg" alt="Icon" />
               </div>
               <div>
@@ -142,7 +142,7 @@
             </div>
 
             <!-- Small Features Item -->
-            <div class="animate_top kn to/3 tc cg oq">
+            <div class="animate_top kn to/3 tc cg oq transform transition duration-300 ease-in-out hover:scale-110">
               <div class="tc wf xf cf ae cd rg oh">
                 <img src="images/icon-03.svg" alt="Icon" />
               </div>
@@ -197,7 +197,7 @@
       <section class="i pg ji gp uq">
         <!-- Bg Shapes -->
         <span class="rc h s r vd fd/5 fh rm"></span>
-        
+
 
         <!-- Section Title Start -->
         <div
@@ -1348,7 +1348,7 @@
         };
       };
     </script>
-    
+
   <script defer src="bundle.js"></script>
- 
+
 </html>
