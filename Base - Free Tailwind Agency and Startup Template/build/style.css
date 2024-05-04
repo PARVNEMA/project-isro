@@ -1,3 +1,98 @@
+
+li {
+  list-style: none;
+}
+
+
+.wiper-track {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 3.5rem;
+  margin: 0 auto;
+  transition: transform 0.4s ease-in;
+  padding: 0 1rem;
+}
+.wiper-item {
+  width: 400px;
+  height: 600px;
+  display:inline;
+  position: relative;
+  transition: scale 0.2s linear;
+
+}
+
+.wiper-button img {
+  height: 100%;
+  width: 100%;
+  object-fit:cover;
+}
+.wiper {
+  width:full;
+  position: relative;
+  margin: 0 auto;
+}
+.active-swipe {
+  transform: scale(1.5);
+}
+.wiper-button {
+  margin: 0 1rem;
+  height: 70px;
+  width: 45px;
+  position: absolute;
+  top: 50%;
+  background: transparent;
+  border: none;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.wiper-button__left {
+  right:0;
+  transform: translateY(-50%)
+}
+.wiper__image-button {
+  right: 50%;
+  top: 50%;
+  position: absolute;
+  padding: 0.8rem 1rem;
+  border-radius: 3px;
+  background-color: white;
+  border: none;
+  font-size: 1.4rem;
+  transform: translateY(-50%) translateX(50%);
+  cursor: pointer;
+}
+.wiper-wrapper {
+  max-width: 1348px;
+  overflow: hidden;
+  padding: 2rem 0.5rem;
+  margin: 0 auto;
+}
+.swiper__image-button {
+  right: 50%;
+  top: 50%;
+  position: absolute;
+  padding: 0.8rem 1rem;
+  border-radius: 3px;
+  background-color: white;
+  border: none;
+  font-size: 1rem;
+  transform: translateY(-50%) translateX(50%);
+  cursor: pointer;
+}
+.swiper__image-button:hover {
+  color: red;
+}
+.wiper__image{
+  height:100%;
+  width:100%;
+  object-fit: cover;
+  border-radius:30px;
+}
+.is-hidden{
+  display:none;
+}
+
+
 /*!***************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/css/style.css ***!
   \***************************************************************************************************************/
@@ -1425,7 +1520,8 @@ h1,  h2,  h3,  h4,  h5,  h6{
   padding: 1.75rem;
 }
 ._h{
-  padding: 1.375rem;
+  padding: 0.65rem;
+  padding-right: 10.5rem;
 }
 .ai{
   padding: 1.25rem;
