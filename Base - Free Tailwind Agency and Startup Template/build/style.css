@@ -1485,7 +1485,7 @@ h1,  h2,  h3,  h4,  h5,  h6{
 }
 .qh{
   --tw-bg-opacity: 1;
-  background-color: rgb(236 240 245 / var(--tw-bg-opacity));
+  background-color: #121212;
 }
 .rh{
   --tw-bg-opacity: 1;
@@ -1753,7 +1753,7 @@ h1,  h2,  h3,  h4,  h5,  h6{
   line-height: 1.75rem;
 }
 .kk{
-  color:"#FFFFFF";
+  color:#007aff;
 }
 .lk{
  color:"#FFFFFF";
