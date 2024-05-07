@@ -15,12 +15,13 @@ li {
 .wiper-item {
   background-color: #212121;
   width: 400px;
-  height: 600px;
+  height: 615px;
   border:2px solid red;
   display:inline;
   position: relative;
   transition: scale 0.2s linear;
   border-radius: 0.5rem;
+  font-family: 'Times New Roman', Times, serif;
 
 }
 
