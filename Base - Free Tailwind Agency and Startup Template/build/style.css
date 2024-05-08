@@ -84,18 +84,22 @@ font-size: 18px;
 
 .wiper-track {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(9, 1fr);
   column-gap: 3.5rem;
   margin: 0 auto;
   transition: transform 0.4s ease-in;
   padding: 0 1rem;
 }
 .wiper-item {
+  background-color: #212121;
   width: 400px;
-  height: 600px;
+  height: 615px;
+  border:2px solid red;
   display:inline;
   position: relative;
   transition: scale 0.2s linear;
+  border-radius: 0.5rem;
+  font-family: 'Times New Roman', Times, serif;
 
 }
 
@@ -110,7 +114,8 @@ font-size: 18px;
   margin: 0 auto;
 }
 .active-swipe {
-  transform: scale(1.5);
+  transform: scale(1.2);
+  border-radius: 0.5rem;
 }
 .wiper-button {
   margin: 0 1rem;
@@ -244,6 +249,8 @@ body{
 ::after {
   --tw-content: '';
 }
+
+
 
 /*
 1. Use a consistent sensible line-height in all browsers.
@@ -1563,7 +1570,7 @@ h1,  h2,  h3,  h4,  h5,  h6{
 }
 .qh{
   --tw-bg-opacity: 1;
-  background-color: rgb(236 240 245 / var(--tw-bg-opacity));
+  background-color: #121212;
 }
 .rh{
   --tw-bg-opacity: 1;
@@ -1831,7 +1838,7 @@ h1,  h2,  h3,  h4,  h5,  h6{
   line-height: 1.75rem;
 }
 .kk{
-  color:"#FFFFFF";
+  color:#007aff;
 }
 .lk{
  color:"#FFFFFF";
@@ -2075,8 +2082,8 @@ h1,  h2,  h3,  h4,  h5,  h6{
 }
 
 .c:hover .im{
-  --tw-translate-y: 0px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  /* --tw-translate-y: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)); */
 }
 
 .c:hover .jm{
