@@ -19,26 +19,23 @@ h1{
   margin: 100px auto 50px;
   font-weight: 600;
 }
- form .formsearch{
+  .formsearch{
   width: 90%;
   height: 50px;
-  max-width: 500px;
-  margin: auto;
-  background-color: #178582;
+  max-width: 200px;
   display: flex;
   align-items: center;
-  border-radius: 8px;
+  justify-content:center;
+  border-radius-top-right: 4px;
 
 }
  .forminp{
-  flex: 1;
   height: 100%;
   outline: 0px;
-  padding: 0px 30px;
-  background: transparent;
+  
   border: 0;
   font-size: 18px;
-  color: black;
+  color: white;
 }
 form button{
   outline: 0;
@@ -96,10 +93,10 @@ font-size: 18px;
   padding: 0 1rem;
 }
 .wiper-item {
-  background-color: #212121;
+  background-color: #3e3e42;
   width: 400px;
   height: 615px;
-  border:2px solid red;
+  border:5px solid #0a3560;
   display:inline;
   position: relative;
   transition: scale 0.2s linear;
