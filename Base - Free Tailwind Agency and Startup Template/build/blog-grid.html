@@ -16,7 +16,7 @@
     <!-- ===== Header Start ===== -->
     <header
     class="g s r vd ya cj  "
-    
+
     :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
     @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
   >
@@ -25,7 +25,7 @@
         <a href="index.html">
           <h1 style="font-size: xx-large;">Space Safari</h1>
         </a>
-  
+
         <!-- Hamburger Toggle BTN -->
         <button class="po rc" @click="navigationOpen = !navigationOpen">
           <span class="rc i pf re pd">
@@ -42,7 +42,7 @@
         </button>
         <!-- Hamburger Toggle BTN -->
       </div>
-  
+
       <div
         class="vd wo/4 sd qo f ho oo wf yf"
         :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }"
@@ -56,18 +56,18 @@
             <!-- <li><a href="signup.html" class="xl" :class="{ 'mk': page === 'signup' }">Sign Up</a></li> -->
             <li><a href="Model.html" class="xl" :class="{ 'mk': page === '404' }">Model</a></li>
             <li class="c i" x-data="{ dropdown: false }">
-  
-  
+
+
               <!-- Dropdown Start -->
               <ul class="a" :class="{ 'tc': dropdown }">
-  
+
               </ul>
               <!-- Dropdown End -->
             </li>
             <!-- <li><a href="index.html#support" class="xl">Support</a></li> -->
           </ul>
         </div class="flex flex-row">
-  
+
         <div class="tc wf ig pb no">
           <!-- <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">
             <label class="rc ab i">
@@ -80,7 +80,7 @@
               <!-- <img class="xc nm" src="images/icon-moon.svg" alt="Moon" />
             </label>
           </div> -->
-  
+
           <a href="signin.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Sign In</a>
           <a href="signup.html" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Sign Up</a>
         </div>
@@ -89,20 +89,22 @@
   </header>
 
     <!-- ===== Header End ===== -->
-    
+
 
     <main>
       <!-- ===== Blog Grid Start ===== -->
       <section class="ji gp uq">
         <div class="i" style="color: black; display: flex; height: 2rem; justify-content: end;padding-right: 9rem;">
+          <form action="" id="search">
           <input style="width: 40rem; "
-            type="text"
+            type="text" id="searchbox"
             placeholder="Search Here..."
             class="vd sm _g ch pm vk xm rg gm dm/40 dn/40 li mi"
           />
-
+          <button>Search</button>
+        </form>
           <button class="h r q _h" >
-            <svg 
+            <svg
               class="th ul ml il"
               width="21"
               height="21"
@@ -116,9 +118,40 @@
             </svg>
           </button>
         </div>
+
+        <div>
+          <div id="search-result" >
+
+          </div>
+          <button id="showmore">Show More</button>
+        </div>
         <div class="bb ye ki xn vq jb jo">
+
           <div class="wc qf pn xo zf iq">
+
+
+
+
             <!-- Blog Item -->
+            <div class="animate_top sg vk rm xm">
+
+              </div>
+
+              <div class="yh">
+                <div class="tc uf wf ag jq">
+                  <div class="tc wf ag">
+                    <p style="font-weight: 1000;">China (CNSA)</p>
+                  </div>
+                  <div class="tc wf ag">
+                    <img src="images/icon-calender.svg" alt="Calender" />
+                    <p style="font-weight: 1000;">03 May 2024</p>
+                  </div>
+                </div>
+                <p style="font-size:medium;" class="ek tj ml il kk wm xl eq lb">
+                  <a  href="https://en.wikipedia.org/wiki/Chang%27e_6">First sample return mission from the Far side of the Moon launches</a>
+                </p>
+              </div>
+            </div>
             <div class="animate_top sg vk rm xm">
               <div style="height: 20rem; width: 20rem;" class="c rc i z-1 pg">
                 <img style="height: 20rem; width: 20rem;" class="w-full" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Chang%27e-5_mockup_at_ZHAL_01.jpg/390px-Chang%27e-5_mockup_at_ZHAL_01.jpg" alt="Blog" />
@@ -303,8 +336,8 @@
                 </p>
               </div>
             </div>
-            
-            
+
+
             <!-- Blog Item -->
             <div class="animate_top sg vk rm xm">
               <div style="height: 20rem; width: 20rem;" class="c rc i z-1 pg">
@@ -335,7 +368,7 @@
                 </p>
               </div>
             </div>
-            
+
             <!-- Blog Item -->
             <div class="animate_top sg vk rm xm">
               <div style="height: 20rem; width: 20rem;" class="c rc i z-1 pg">
@@ -367,7 +400,7 @@
                 </p>
               </div>
             </div>
-            
+
             <!-- Blog Item -->
             <div class="animate_top sg vk rm xm">
               <div style="height: 20rem; width: 20rem;" class="c rc i z-1 pg">
@@ -398,7 +431,7 @@
                 </p>
               </div>
             </div>
-            
+
           </div>
 
           <!-- Pagination -->
@@ -688,5 +721,48 @@
 </button>
 
     <!-- ====== Back To Top End ===== -->
-  <script defer src="bundle.js"></script></body>
+  <script defer src="bundle.js"></script>
+ <script>
+  const accesskey = "tH6Ib5lI7CqE9kX5uRWuNR3yVyHPplF0ghqT22Ugilk";
+const search = document.getElementById("search");
+const searchBox = document.getElementById("searchbox");
+const searchresult = document.getElementById("search-result");
+const showmore = document.getElementById("showmore");
+
+let keyword = "";
+let page = 1;
+async function searchImages() {
+  keyword = searchBox.value;
+  let url = `https://api.unsplash.com/search/photos?page=${page}&query=space+${keyword}&client_id=${accesskey}&per_page=12`;
+
+  const response = await fetch(url);
+  const data = await response.json();
+
+  const results = data.results;
+  if (page === 1) {
+    searchresult.innerHTML = " ";
+  }
+  results.map((result) => {
+    const image = document.createElement("img");
+    image.src = result.urls.small;
+    const imagelink = document.createElement("a");
+    imagelink.href = result.links.html;
+    imagelink.target = "_blank";
+    imagelink.appendChild(image);
+    searchresult.appendChild(imagelink);
+  });
+  showmore.style.display = "block";
+}
+search.addEventListener("submit", (e) => {
+  e.preventDefault();
+  page = 1;
+  searchImages();
+});
+showmore.addEventListener("click", () => {
+  page++;
+  searchImages();
+});
+
+ </script>
+</body>
 </html>
