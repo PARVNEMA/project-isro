@@ -7,6 +7,8 @@
     <title>Blog Grids | Base - Tailwind CSS Startup Template</title>
   <link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet"></head>
   <body
+  style="background-image: url(https://wallpapercave.com/wp/wp12867163.jpg);  background-attachment: fixed;
+  background-size: 100%;"
     x-data="{ page: 'blog-grid', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
     x-init="
          darkMode = JSON.parse(localStorage.getItem('darkMode'));
@@ -94,22 +96,22 @@
     <main>
       <!-- ===== Blog Grid Start ===== -->
       <section class="ji gp uq">
-        <div class="i" style="color: black; display: flex; height: 2rem; justify-content: end;padding-right: 9rem;">
+        <h1 class="ck gk kk " style="margin-bottom: 15px;">Search Space Photos</h1>
+        <div class="i" style="color: black; display: flex; height: 2rem; justify-content: end;">
           <form action="" id="search">
           <input style="width: 40rem; "
             type="text" id="searchbox"
             placeholder="Search Here..."
             class="vd sm _g ch pm vk xm rg gm dm/40 dn/40 li mi"
           />
-          <button>Search</button>
-        </form>
-          <button class="h r q _h" >
+          <button class="" style="display: flex; align-items: center; justify-content: center; gap: 10px;" >
+            Search
             <svg
               class="th ul ml il"
               width="21"
               height="21"
               viewBox="0 0 21 21"
-              fill="none"
+              fill="#fff"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -117,6 +119,8 @@
               />
             </svg>
           </button>
+        </form>
+
         </div>
 
         <div>
@@ -125,33 +129,11 @@
           </div>
           <button id="showmore">Show More</button>
         </div>
-        <div class="bb ye ki xn vq jb jo">
 
-          <div class="wc qf pn xo zf iq">
-
-
+        <h1 class="ck gk kk ">Space Events</h1>
+        <div class="bb ye ki xn vq jb jo" style="display: flex ; flex-wrap: wrap; justify-content: space-around;">
 
 
-            <!-- Blog Item -->
-            <div class="animate_top sg vk rm xm">
-
-              </div>
-
-              <div class="yh">
-                <div class="tc uf wf ag jq">
-                  <div class="tc wf ag">
-                    <p style="font-weight: 1000;">China (CNSA)</p>
-                  </div>
-                  <div class="tc wf ag">
-                    <img src="images/icon-calender.svg" alt="Calender" />
-                    <p style="font-weight: 1000;">03 May 2024</p>
-                  </div>
-                </div>
-                <p style="font-size:medium;" class="ek tj ml il kk wm xl eq lb">
-                  <a  href="https://en.wikipedia.org/wiki/Chang%27e_6">First sample return mission from the Far side of the Moon launches</a>
-                </p>
-              </div>
-            </div>
             <div class="animate_top sg vk rm xm">
               <div style="height: 20rem; width: 20rem;" class="c rc i z-1 pg">
                 <img style="height: 20rem; width: 20rem;" class="w-full" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Chang%27e-5_mockup_at_ZHAL_01.jpg/390px-Chang%27e-5_mockup_at_ZHAL_01.jpg" alt="Blog" />
