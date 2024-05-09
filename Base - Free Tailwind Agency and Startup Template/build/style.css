@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Poppins:wght@200;500&family=Tilt+Prism&family=Ubuntu:ital,wght@1,300&display=swap');
+
+.SS{
+ font-family:Georgia, 'Times New Roman', Times, serif;
+}
 
 *{
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   box-sizing: border-box;
 }
 body{
@@ -14,23 +19,20 @@ h1{
   margin: 100px auto 50px;
   font-weight: 600;
 }
-form{
+  .formsearch{
   width: 90%;
   height: 50px;
-  max-width: 500px;
-  margin: auto;
-  background-color: #178582;
+  max-width: 200px;
   display: flex;
   align-items: center;
-  border-radius: 8px;
+  justify-content:center;
+  border-radius-top-right: 4px;
 
 }
-form input{
-  flex: 1;
+ .forminp{
   height: 100%;
   outline: 0px;
-  padding: 0px 30px;
-  background: transparent;
+  
   border: 0;
   font-size: 18px;
   color: white;
@@ -91,10 +93,10 @@ font-size: 18px;
   padding: 0 1rem;
 }
 .wiper-item {
-  background-color: #212121;
+  background-color: #3e3e42;
   width: 400px;
   height: 615px;
-  border:2px solid red;
+  border:5px solid #0a3560;
   display:inline;
   position: relative;
   transition: scale 0.2s linear;
@@ -230,7 +232,7 @@ header{
 }
 
 body{
-  background-image: url("https://wallpapercave.com/wp/wp9116463.jpg");
+  background-image: url("https://wallpapercave.com/wp/wp12867163.jpg");
   background-attachment: fixed;
   background-size: 100%;
 }
@@ -603,7 +605,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 img,
 video {
   max-width: 100%;
-  height: auto;
+  height: 5rem;
 }
 
 body{
@@ -618,7 +620,7 @@ body{
 }
 
 h1,  h2,  h3,  h4,  h5,  h6{
-  font-family: Outfit, sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 *, ::before, ::after{
@@ -1837,7 +1839,7 @@ h1,  h2,  h3,  h4,  h5,  h6{
   line-height: 1.75rem;
 }
 .kk{
-  color:#007aff;
+  color:rgb(78 107 255);
 }
 .lk{
  color:"#FFFFFF";
@@ -2081,8 +2083,8 @@ h1,  h2,  h3,  h4,  h5,  h6{
 }
 
 .c:hover .im{
-  /* --tw-translate-y: 0px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)); */
+  --tw-translate-y: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .c:hover .jm{
