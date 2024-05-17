@@ -64,7 +64,8 @@
             <li><a href="blog-single.html" class="xl" :class="{ 'mk': page === 'blog-single' }">The Planets</a></li>
             <!-- <li><a href="signin.html" class="xl" :class="{ 'mk': page === 'signin' }">Sign In</a></li> -->
             <!-- <li><a href="signup.html" class="xl" :class="{ 'mk': page === 'signup' }">Sign Up</a></li> -->
-            <li><a href="Model.html" class="xl" :class="{ 'mk': page === '404' }">Space Model</a></li>
+            <li><a href="Model.html" class="xl" :class="{ 'mk': page === '' }">Space Model</a></li>
+            <li><a href="404.html" class="xl" :class="{ 'mk': page === '' }">Merchandise</a></li>
             <li class="c i" x-data="{ dropdown: false }">
 
 
@@ -90,7 +91,10 @@
               <!-- <img class="xc nm" src="images/icon-moon.svg" alt="Moon" />
             </label>
           </div> -->
-
+          <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            <a href="Model.html">Buy membership</a>
+          
+            </button>
           <a href="signin.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Sign In</a>
           <a href="signup.html" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi" style="background-color:#4E6BFF;" >Sign Up</a>
         </div>
@@ -100,17 +104,156 @@
 
     <!-- ===== Header End ===== -->
 
-    <main>
+    <main class="mt-10">
       <!-- ===== 404 Start ===== -->
-      <section class="i pg fh rm ej np er fj op fr " style="display: flex; justify-content: center; align-items: center; flex-direction: column; ;">
-        <!-- Bg Shapes -->
-     <div>
-          <h2 class="ek tj eo kk wm gb">Sorry, the page can’t be found</h2>
-          <p class="hb">The page you were looking for appears to have been moved, deleted or does not exist.</p>
+      <div class="relative w-full h-full">
+        <div class="absolute hidden w-full  lg:block h-96 " ></div>
+        <div class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20" style="padding-top: 0; width: 40rem; border-radius: 2rem; margin-top: 9rem; background-color: rgba(109, 100, 237, 0.701);">
+          <div>
+                <h1 style="font-size: xx-large; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; padding:3rem 0rem 3rem 0rem;" >Enjoy additional perks with our membership</h1>
+          </div>
+          <div class="grid max-w-screen-md gap-10 md:grid-cols-2 sm:mx-auto">
+            <div>
+              <div class="p-8 bg-gray-900 rounded">
+                <div class="mb-4 text-center">
+                  <p class="text-xl font-medium tracking-wide text-white">
+                    
+                    Weekly Plan
+                  </p>
+                  <div class="flex items-center justify-center">
+                    <p class="mr-2 text-5xl font-semibold text-white lg:text-6xl">
+                      ₹99
+                    </p>
+                    <p class="text-lg text-gray-500">/week</p>
+                  </div>
+                </div>
+                <ul class="mb-8 space-y-2">
+                  <li class="flex items-center">
+                    <div class="mr-3">
+                      <svg class="w-4 h-4 text-teal-accent-400" viewBox="0 0 24 24" stroke-linecap="round" stroke-width="2">
+                        <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8"></polyline>
+                        <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor"></circle>
+                      </svg>
+                    </div>
+                    <p class="font-medium text-gray-300">Space Newsletter</p>
+                  </li>
+                  <li class="flex items-center">
+                    <div class="mr-3">
+                      <svg class="w-4 h-4 text-teal-accent-400" viewBox="0 0 24 24" stroke-linecap="round" stroke-width="2">
+                        <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8"></polyline>
+                        <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor"></circle>
+                      </svg>
+                    </div>
+                    <p class="font-medium text-gray-300">Hd Space Images</p>
+                  </li>
+                  <li class="flex items-center">
+                    <div class="mr-3">
+                      <svg class="w-4 h-4 text-teal-accent-400" viewBox="0 0 24 24" stroke-linecap="round" stroke-width="2">
+                        <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8"></polyline>
+                        <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor"></circle>
+                      </svg>
+                    </div>
+                    <p class="font-medium text-gray-300">Free Delivery on Purchases</p>
+                  </li>
+                  <li class="flex items-center">
+                    <div class="mr-3">
+                      <svg class="w-4 h-4 text-teal-accent-400" viewBox="0 0 24 24" stroke-linecap="round" stroke-width="2">
+                        <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8"></polyline>
+                        <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor"></circle>
+                      </svg>
+                    </div>
+                    <p class="font-medium text-gray-300">Documentaries of Space Programs</p>
+                  </li>
+                  <li class="flex items-center">
+                    <div class="mr-3">
+                      ⨂
+                    </div>
+                    <p class="font-medium text-gray-300">Free Space Safari <br>T-Shirt</p>
+                  </li>
+                </ul>
+                <button
+                  type="submit" style="background-color: #4E6BFF;"
+                  class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                >
+                  Get Now
+                </button>
+              </div>
+              <div class="w-11/12 h-2 mx-auto bg-gray-900 rounded-b opacity-75"></div>
+              <div class="w-10/12 h-2 mx-auto bg-gray-900 rounded-b opacity-50"></div>
+              <div class="w-9/12 h-2 mx-auto bg-gray-900 rounded-b opacity-25"></div>
+            </div>
+            <div>
+              <div class="p-8 bg-gray-900 rounded">
+                <div class="mb-4 text-center">
+                  <p class="text-xl font-medium tracking-wide text-white">Monthly Plan</p>
+                  <div class="flex items-center justify-center">
+                    <p class="mr-2 text-5xl font-semibold text-white lg:text-6xl">
+                      ₹999
+                    </p>
+                    <p class="text-lg text-gray-500">/month</p>
+                  </div>
+                </div>
+                <ul class="mb-8 space-y-2">
+                  <li class="flex items-center">
+                    <div class="mr-3">
+                      <svg class="w-4 h-4 text-teal-accent-400" viewBox="0 0 24 24" stroke-linecap="round" stroke-width="2">
+                        <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8"></polyline>
+                        <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor"></circle>
+                      </svg>
+                    </div>
+                    <p class="font-medium text-gray-300">Space newsletter</p>
+                  </li>
+                  <li class="flex items-center">
+                    <div class="mr-3">
+                      <svg class="w-4 h-4 text-teal-accent-400" viewBox="0 0 24 24" stroke-linecap="round" stroke-width="2">
+                        <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8"></polyline>
+                        <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor"></circle>
+                      </svg>
+                    </div>
+                    <p class="font-medium text-gray-300">Hd Space Images</p>
+                  </li>
+                  <li class="flex items-center">
+                    <div class="mr-3">
+                      <svg class="w-4 h-4 text-teal-accent-400" viewBox="0 0 24 24" stroke-linecap="round" stroke-width="2">
+                        <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8"></polyline>
+                        <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor"></circle>
+                      </svg>
+                    </div>
+                    <p class="font-medium text-gray-300">Free Delivery on Purchases</p>
+                  </li>
+                  <li class="flex items-center">
+                    <div class="mr-3">
+                      <svg class="w-4 h-4 text-teal-accent-400" viewBox="0 0 24 24" stroke-linecap="round" stroke-width="2">
+                        <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8"></polyline>
+                        <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor"></circle>
+                      </svg>
+                    </div>
+                    <p class="font-medium text-gray-300">Documentaries of Space Programs</p>
+                  </li>
+                  <li class="flex items-center">
+                    <div class="mr-3">
+                      <svg class="w-4 h-4 text-teal-accent-400" viewBox="0 0 24 24" stroke-linecap="round" stroke-width="2">
+                        <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8"></polyline>
+                        <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor"></circle>
+                      </svg>
+                    </div>
+                    <p class="font-medium text-gray-300">Free Space Safari <br> T-Shirt</p>
+                  </li>
+                </ul>
+                <button
+                  type="submit" style="background-color: #4E6BFF;"
+                  class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                >
+                  Get Now
+                </button>
+              </div>
+              <div class="w-11/12 h-2 mx-auto bg-gray-900 rounded-b opacity-75"></div>
+              <div class="w-10/12 h-2 mx-auto bg-gray-900 rounded-b opacity-50"></div>
+              <div class="w-9/12 h-2 mx-auto bg-gray-900 rounded-b opacity-25"></div>
+            </div>
+          </div>
         </div>
-          <a href="./index.html" class="ek vc rg gh lk ml il _l gi hi">Back to Home</a>
-        </div>
-      </section>
+      </div>
       <!-- ===== 404 End ===== -->
     </main>
     <!-- ===== Footer Start ===== -->
