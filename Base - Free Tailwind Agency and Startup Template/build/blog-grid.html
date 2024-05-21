@@ -9,6 +9,48 @@
   <link rel="icon" href="images/harsh.png">
   <link href="style.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .scard{
+  width:280px;
+  height:400px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  background:#fff;
+  border-radius:10px;
+  padding:15px;
+  margin:10px;
+  text-align:justify;
+}
+.darkS{
+  color:#212121 !important;
+}
+.read{
+  border:none;
+  background:#141E46;
+  color:#fff;
+  padding:5px 8px;
+  border-radius:15px;
+  cursor: pointer;
+}
+.descrb{
+  height: 100%;
+}
+.imgb{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  background-position:bottom;
+  background-size:cover;
+  border-radius:10px;
+}
+.container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+}
+  </style>
   </head>
 
   <body style="overflow-x: hidden;"
@@ -93,7 +135,7 @@
           </div> -->
           <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             <a href="Model.html">Buy membership</a>
-          
+
             </button>
           <a href="signin.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Sign In</a>
           <a href="signup.html" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi" style="background-color:#4E6BFF;" >Sign Up</a>
@@ -145,13 +187,16 @@
         </div>
 
         <h1 class="ck gk kk ">Space Events</h1>
+        <div id="cards-container" class="container">
+        </div>
         <div class="bb ye ki xn vq jb jo" style="display: grid ; grid-template-columns: repeat(3,1fr);  justify-content: space-around;">
 
 
 
 
+
             <!-- Blog Item -->
-            <div class="animate_top sg vk rm xm">
+            <div class="animate_top sg vk rm xm" >
               <div style="height: 20rem; width: 20rem;" class="c rc i z-1 pg">
                 <img style="height: 20rem; width: 20rem;" class="w-full" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Chang%27e-5_mockup_at_ZHAL_01.jpg/390px-Chang%27e-5_mockup_at_ZHAL_01.jpg" alt="Blog" />
 
@@ -179,7 +224,7 @@
                 </p>
               </div>
             </div>
-            
+
             <!-- Blog Item -->
             <div class="animate_top sg vk rm xm">
               <div style="height: 20rem; width: 20rem;" class="c rc i z-1 pg">
@@ -762,6 +807,45 @@ showmore.addEventListener("click", () => {
   searchImages();
 });
 
+async function getnews(){
+  // let apikey='bc8f27bdf1104fc8a5266cc9b60e4e3a'
+ let response=await fetch(`
+https://newsapi.org/v2/everything?qInTitle=nasa&qInTitle=space&to=2024-04-21&sortBy=publishedAt&pageSize=25&language=en&apiKey=bc8f27bdf1104fc8a5266cc9b60e4e3a`)
+ const data=await response.json();
+ const articlesWithImages = data.articles.filter(
+        (article) => article.urlToImage
+    );
+ console.log(articlesWithImages);
+ rendernews(articlesWithImages);
+}
+getnews();
+const cardsContainer = document.querySelector('#cards-container');
+
+function rendernews(characters) {
+  characters.forEach(character => {
+    const div = document.createElement('div');
+    const image = document.createElement('img');
+    const name = document.createElement('p');
+    const species = document.createElement('h2');
+    const like = document.createElement('a');
+    div.classList = 'scard animate_top'
+    image.classList = 'imgb'
+    like.classList = 'read'
+    name.classList="darkS"
+    species.classList="darkS"
+    image.src = character.urlToImage
+    name.innerText = ` ${character.title}`
+    species.innerText =`${character.description}`.substring(0,75)
+;    like.textContent = 'Read more'
+    like.href=character.url;
+    like.target='_blank'
+    div.appendChild(image)
+    div.appendChild(name)
+    div.appendChild(species)
+    div.appendChild(like)
+    cardsContainer.appendChild(div)
+  });
+};
  </script>
 </body>
 </html>
