@@ -810,7 +810,8 @@ showmore.addEventListener("click", () => {
 async function getnews(){
   // let apikey='bc8f27bdf1104fc8a5266cc9b60e4e3a'
  let response=await fetch(`
-https://newsapi.org/v2/everything?qInTitle=nasa&qInTitle=space&to=2024-04-21&sortBy=publishedAt&pageSize=25&language=en&apiKey=bc8f27bdf1104fc8a5266cc9b60e4e3a`)
+
+ https://newsapi.org/v2/everything?qInTitle=space&from=2024-04-23&sortBy=publishedAt&apiKey=bc8f27bdf1104fc8a5266cc9b60e4e3a`)
  const data=await response.json();
  const articlesWithImages = data.articles.filter(
         (article) => article.urlToImage
