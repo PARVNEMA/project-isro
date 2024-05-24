@@ -187,11 +187,10 @@
         </div>
 
         <h1 class="ck gk kk ">Space Events</h1>
-        <div id="cards-container" class="container">
-        </div>
+      
         <div class="bb ye ki xn vq jb jo" style="display: grid ; grid-template-columns: repeat(3,1fr);  justify-content: space-around;">
-
-
+          
+          
 
 
 
@@ -477,7 +476,9 @@
             </div>
 
           </div>
-
+          <h1 class="ck gk kk "> Latest news</h1>
+          <div id="cards-container" class="container">
+          </div>
           <!-- Pagination -->
           <div class="mb lo bq i ua">
             <!-- <nav>
@@ -811,7 +812,8 @@ async function getnews(){
   // let apikey='bc8f27bdf1104fc8a5266cc9b60e4e3a'
  let response=await fetch(`
 
- https://newsapi.org/v2/everything?qInTitle=space&from=2024-04-23&sortBy=publishedAt&apiKey=bc8f27bdf1104fc8a5266cc9b60e4e3a`)
+ https://newsapi.org/v2/everything?qInTitle=space&to=2024-04-23&sortBy=relevancy&pageSize=15&language
+=en&apiKey=bc8f27bdf1104fc8a5266cc9b60e4e3a`)
  const data=await response.json();
  const articlesWithImages = data.articles.filter(
         (article) => article.urlToImage
