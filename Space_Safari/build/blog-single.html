@@ -1,601 +1,631 @@
 <!DOCTYPE html>
-
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <<meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Space Safari</title>
   <link rel="icon" href="images/harsh.png">
   <link href="style.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  </head>
+  <header
+      class="g s r vd ya cj  "
+  
+      :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
+      @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
+    >
+      <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
+        <div class="vd to/4 tc wf yf" style="display: flex; justify-content: space-between; ">
+          <a href="index.html" style="display: flex; justify-content:space-between;" >
+            <img src="images/harsh.png" alt="" 
+            style="height: 5rem;  width:7rem; margin-right: 1rem; "
+            >
+            <h1 class="SS" style="font-size: xx-large; display: flex; align-items: center; padding-left: 0.1rem; ">Space Safari</h1>
+          </a>
+  
+          <!-- Hamburger Toggle BTN -->
+          <button class="po rc" @click="navigationOpen = !navigationOpen">
+            <span class="rc i pf re pd">
+              <span class="du-block h q vd yc">
+                <span class="rc i r s eh um tg te rd eb ml jl dl" :class="{ 'ue el': !navigationOpen }"></span>
+                <span class="rc i r s eh um tg te rd eb ml jl fl" :class="{ 'ue qr': !navigationOpen }"></span>
+                <span class="rc i r s eh um tg te rd eb ml jl gl" :class="{ 'ue hl': !navigationOpen }"></span>
+              </span>
+              <span class="du-block h q vd yc lf">
+                <span class="rc eh um tg ml jl el h na r ve yc" :class="{ 'sd dl': !navigationOpen }"></span>
+                <span class="rc eh um tg ml jl qr h s pa vd rd" :class="{ 'sd rr': !navigationOpen }"></span>
+              </span>
+            </span>
+          </button>
+          <!-- Hamburger Toggle BTN -->
+        </div>
+  
+        <div
+          class="vd wo/4 sd qo f ho oo wf yf"
+          :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }"
+        >
+          <div class="flex flex-row">
+            <ul class="tc _o sf yo cg ep">
+              <li><a href="index.html" class="xl" :class="{ 'mk': page === 'home' }" style="padding-left: 8rem;">Home</a></li>
+              <li><a href="blog-grid.html" class="xl" :class="{ 'mk': page === 'blog-grid' }">Space Events</a></li>
+              <li><a href="blog-single.html" class="xl" :class="{ 'mk': page === 'blog-single' }">The Planets</a></li>
+              <!-- <li><a href="signin.html" class="xl" :class="{ 'mk': page === 'signin' }">Sign In</a></li> -->
+              <!-- <li><a href="signup.html" class="xl" :class="{ 'mk': page === 'signup' }">Sign Up</a></li> -->
+              <li><a href="3D.html" class="xl" :class="{ 'mk': page === '404' }">Space Model</a></li>
+              <li><a href="404.html" class="xl" :class="{ 'mk': page === '404' }">Merchandise</a></li>
+              <li class="c i" x-data="{ dropdown: false }">
+  
+  
+                <!-- Dropdown Start -->
+                <ul class="a" :class="{ 'tc': dropdown }">
+  
+                </ul>
+                <!-- Dropdown End -->
+              </li>
+              <!-- <li><a href="index.html#support" class="xl">Support</a></li> -->
+            </ul>
+          </div class="flex flex-row">
+  
+          <div class="tc wf ig pb no">
+            <!-- <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">
+              <label class="rc ab i">
+                <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode" class="pf vd yc uk h r za ab" />
+                <!-- Icon Sun -->
+                <!-- <svg :class="{ 'wn' : page === 'home', 'xh' : page === 'home' && stickyMenu }" class="th om" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12.0908 18.6363C10.3549 18.6363 8.69 17.9467 7.46249 16.7192C6.23497 15.4916 5.54537 13.8268 5.54537 12.0908C5.54537 10.3549 6.23497 8.69 7.46249 7.46249C8.69 6.23497 10.3549 5.54537 12.0908 5.54537C13.8268 5.54537 15.4916 6.23497 16.7192 7.46249C17.9467 8.69 18.6363 10.3549 18.6363 12.0908C18.6363 13.8268 17.9467 15.4916 16.7192 16.7192C15.4916 17.9467 13.8268 18.6363 12.0908 18.6363ZM12.0908 16.4545C13.2481 16.4545 14.358 15.9947 15.1764 15.1764C15.9947 14.358 16.4545 13.2481 16.4545 12.0908C16.4545 10.9335 15.9947 9.8236 15.1764 9.00526C14.358 8.18692 13.2481 7.72718 12.0908 7.72718C10.9335 7.72718 9.8236 8.18692 9.00526 9.00526C8.18692 9.8236 7.72718 10.9335 7.72718 12.0908C7.72718 13.2481 8.18692 14.358 9.00526 15.1764C9.8236 15.9947 10.9335 16.4545 12.0908 16.4545ZM10.9999 0.0908203H13.1817V3.36355H10.9999V0.0908203ZM10.9999 20.8181H13.1817V24.0908H10.9999V20.8181ZM2.83446 4.377L4.377 2.83446L6.69082 5.14828L5.14828 6.69082L2.83446 4.37809V4.377ZM17.4908 19.0334L19.0334 17.4908L21.3472 19.8046L19.8046 21.3472L17.4908 19.0334ZM19.8046 2.83337L21.3472 4.377L19.0334 6.69082L17.4908 5.14828L19.8046 2.83446V2.83337ZM5.14828 17.4908L6.69082 19.0334L4.377 21.3472L2.83446 19.8046L5.14828 17.4908ZM24.0908 10.9999V13.1817H20.8181V10.9999H24.0908ZM3.36355 10.9999V13.1817H0.0908203V10.9999H3.36355Z" fill=""/>
+                </svg>
+                <!-- Icon Sun -->
+                <!-- <img class="xc nm" src="images/icon-moon.svg" alt="Moon" />
+              </label>
+            </div> -->
+            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              <a href="Model.html">Buy membership</a>
+            
+              </button>
+            <a href="signin.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Sign In</a>
+            <a href="signup.html" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi" style="background-color:#4E6BFF;" >Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-  <body style="overflow-x: hidden;"
+      :root {
+          --bg-color: #000;
+          --text-color: #eee;
+          --highlight-color: #f1683a;
+          --carousel-width: 1140px;
+      }
+      
+      body {
+          margin: 0;
+          background-color: var(--bg-color);
+          color: var(--text-color);
+          font-family: 'Poppins', sans-serif;
+          font-size: 12px;
+      }
+      
+      a {
+          text-decoration: none;
+      }
+      
+      header {
+          width: var(--carousel-width);
+          max-width: 80%;
+          margin: auto;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          position: relative;
+          z-index: 100;
+      }
+      
+      header a {
+          color: var(--text-color);
+          margin-right: 40px;
+      }
+      
+      /* carousel */
+      .carousel {
+          height: 100vh;
+          margin-top: -50px;
+          width: 100vw;
+          overflow: hidden;
+          position: relative;
+      }
+      
+      .carousel .list .item {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          inset: 0;
+      }
+      
+      .carousel .list .item img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+      }
+      
+      .carousel .list .item .content {
+          position: inherit;
+          top: 15%;
+          width: var(--carousel-width);
+          max-width: 30%;
+          left: 0; /* Align content to the left */
+          transform: translateX(0); /* Remove the centering transformation */
+          padding-left: 5%; /* Optionally adjust the padding for left margin */
+          box-sizing: border-box;
+          color: #fff;
+          text-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+          animation: showContent 0.5s linear forwards;
+      }
+      
+      .carousel .list .item .author {
+          font-weight: bold;
+          letter-spacing: 10px;
+      }
+      
+      .carousel .list .item .title,
+      .carousel .list .item .topic {
+          font-size: 5em;
+          font-weight: bold;
+          line-height: 1.3em;
+      }
+      
+      .carousel .list .item .topic {
+          color: var(--highlight-color);
+      }
+      
+      .carousel .list .item .buttons {
+          display: grid;
+          grid-template-columns: repeat(2, 130px);
+          grid-template-rows: 40px;
+          gap: 5px;
+          margin-top: 20px;
+      }
+      
+      .carousel .list .item .buttons button {
+          border: none;
+          background-color: var(--text-color);
+          letter-spacing: 3px;
+          font-family: 'Poppins', sans-serif;
+          font-weight: 500;
+          transition: background-color 0.5s, color 0.5s;
+      }
+      
+      .carousel .list .item .buttons button:nth-child(2) {
+          background-color: transparent;
+          border: 1px solid #fff;
+          color: var(--text-color);
+      }
+      
+      /* thumbnail */
+      .thumbnail {
+          position: absolute;
+          bottom: 50px;
+          left: 50%;
+          width: max-content;
+          z-index: 100;
+          display: flex;
+          gap: 20px;
+      }
+      
+      .thumbnail .item {
+          width: 150px;
+          height: 220px;
+          flex-shrink: 0;
+          position: relative;
+      }
+      
+      .thumbnail .item img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 20px;
+      }
+      
+      .thumbnail .item .content {
+          color: #fff;
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          right: 10px;
+      }
+      
+      .thumbnail .item .content .title {
+          font-weight: 500;
+      }
+      
+      .thumbnail .item .content .description {
+          font-weight: 300;
+      }
+      
+      /* arrows */
+      .arrows {
+          position: absolute;
+          top: 80%;
+          right: 52%;
+          z-index: 100;
+          width: 300px;
+          max-width: 30%;
+          display: flex;
+          gap: 10px;
+      }
+      
+      .arrows button {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-color: rgba(238, 238, 238, 0.25);
+          border: none;
+          color: #fff;
+          font-family: monospace;
+          font-weight: bold;
+          transition: background-color 0.5s, color 0.5s;
+      }
+      
+      .arrows button:hover {
+          background-color: #fff;
+          color: #000;
+      }
+      
+      /* animation for all items */
+      .carousel .list .item .content {
+          transform: translateY(50px);
+          filter: blur(20px);
+          opacity: 0;
+      }
+      
+      @keyframes showContent {
+          to {
+              transform: translateY(0);
+              filter: blur(0);
+              opacity: 1;
+          }
+      }
+      
+      /* Delays for specific items */
+      .carousel .list .item:nth-child(1) .content { animation-delay: 0.5s !important; }
+      .carousel .list .item:nth-child(2) .content { animation-delay: 1.0s !important; }
+      .carousel .list .item:nth-child(3) .content { animation-delay: 1.5s !important; }
+      .carousel .list .item:nth-child(4) .content { animation-delay: 2.0s !important; }
+      .carousel .list .item:nth-child(5) .content { animation-delay: 2.5s !important; }
+      .carousel .list .item:nth-child(6) .content { animation-delay: 3.0s !important; }
+      
+      /* Image transitions */
+      .carousel.next .list .item img {
+          animation: showImage 0.5s linear 1 forwards;
+      }
+      
+      @keyframes showImage {
+          to {
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              border-radius: 0;
+          }
+      }
+      
+      .carousel.prev .list .item:nth-child(2) img {
+          animation: outFrame 0.5s linear 1 forwards;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+      }
+      
+      @keyframes outFrame {
+          to {
+              width: 150px;
+              height: 220px;
+              bottom: 50px;
+              left: 50%;
+              border-radius: 20px;
+          }
+      }
+      
+      /* Running time indicator */
+      .carousel .time {
+          position: absolute;
+          z-index: 1000;
+          width: 0;
+          height: 3px;
+          background-color: var(--highlight-color);
+          left: 0;
+          top: 0;
+      }
+      
+      .carousel.next .time,
+      .carousel.prev .time {
+          animation: runningTime 3s linear 1 forwards;
+      }
+      
+      @keyframes runningTime {
+          from {
+              width: 100%;
+          }
+          to {
+              width: 0;
+          }
+      }
+      
+      @media screen and (max-width: 678px) {
+          .carousel .list .item .content {
+              padding-right: 0;
+          }
+      
+          .carousel .list .item .content .title {
+              font-size: 30px;
+          }
+      }
+      </style>
+</head>
+<body style="overflow-x: hidden;"
 
     x-data="{ page: 'blog-single', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
     x-init="
          darkMode = JSON.parse(localStorage.getItem('darkMode'));
          $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
-    :class="{'b eh': darkMode === true}"
-  >
-    <!-- ===== Header Start ===== -->
-    <div >
-    <header
-    class="g s r vd ya cj  "
-
-    :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
-    @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
-  >
-    <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
-      <div class="vd to/4 tc wf yf" style="display: flex; justify-content: space-between; ">
-        <a href="index.html" style="display: flex; justify-content:space-between;" >
-          <img src="images/harsh.png" alt="" 
-          style="height: 5rem;  width:7rem; margin-right: 1rem; "
-          >
-          <h1 class="SS" style="font-size: xx-large; display: flex; align-items: center; padding-left: 0.1rem; ">Space Safari</h1>
-        </a>
-
-        <!-- Hamburger Toggle BTN -->
-        <button class="po rc" @click="navigationOpen = !navigationOpen">
-          <span class="rc i pf re pd">
-            <span class="du-block h q vd yc">
-              <span class="rc i r s eh um tg te rd eb ml jl dl" :class="{ 'ue el': !navigationOpen }"></span>
-              <span class="rc i r s eh um tg te rd eb ml jl fl" :class="{ 'ue qr': !navigationOpen }"></span>
-              <span class="rc i r s eh um tg te rd eb ml jl gl" :class="{ 'ue hl': !navigationOpen }"></span>
-            </span>
-            <span class="du-block h q vd yc lf">
-              <span class="rc eh um tg ml jl el h na r ve yc" :class="{ 'sd dl': !navigationOpen }"></span>
-              <span class="rc eh um tg ml jl qr h s pa vd rd" :class="{ 'sd rr': !navigationOpen }"></span>
-            </span>
-          </span>
-        </button>
-        <!-- Hamburger Toggle BTN -->
-      </div>
-
-      <div
-        class="vd wo/4 sd qo f ho oo wf yf"
-        :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }"
-      >
-        <div class="flex flex-row">
-          <ul class="tc _o sf yo cg ep">
-            <li><a href="index.html" class="xl" :class="{ 'mk': page === 'home' }" style="padding-left: 8rem;">Home</a></li>
-            <li><a href="blog-grid.html" class="xl" :class="{ 'mk': page === 'blog-grid' }">Space Events</a></li>
-            <li><a href="blog-single.html" class="xl" :class="{ 'mk': page === 'blog-single' }">The Planets</a></li>
-            <!-- <li><a href="signin.html" class="xl" :class="{ 'mk': page === 'signin' }">Sign In</a></li> -->
-            <!-- <li><a href="signup.html" class="xl" :class="{ 'mk': page === 'signup' }">Sign Up</a></li> -->
-            <li><a href="3D.html" class="xl" :class="{ 'mk': page === '404' }">Space Model</a></li>
-            <li><a href="404.html" class="xl" :class="{ 'mk': page === '404' }">Merchandise</a></li>
-            <li class="c i" x-data="{ dropdown: false }">
-
-
-              <!-- Dropdown Start -->
-              <ul class="a" :class="{ 'tc': dropdown }">
-
-              </ul>
-              <!-- Dropdown End -->
-            </li>
-            <!-- <li><a href="index.html#support" class="xl">Support</a></li> -->
-          </ul>
-        </div class="flex flex-row">
-
-        <div class="tc wf ig pb no">
-          <!-- <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">
-            <label class="rc ab i">
-              <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode" class="pf vd yc uk h r za ab" />
-              <!-- Icon Sun -->
-              <!-- <svg :class="{ 'wn' : page === 'home', 'xh' : page === 'home' && stickyMenu }" class="th om" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.0908 18.6363C10.3549 18.6363 8.69 17.9467 7.46249 16.7192C6.23497 15.4916 5.54537 13.8268 5.54537 12.0908C5.54537 10.3549 6.23497 8.69 7.46249 7.46249C8.69 6.23497 10.3549 5.54537 12.0908 5.54537C13.8268 5.54537 15.4916 6.23497 16.7192 7.46249C17.9467 8.69 18.6363 10.3549 18.6363 12.0908C18.6363 13.8268 17.9467 15.4916 16.7192 16.7192C15.4916 17.9467 13.8268 18.6363 12.0908 18.6363ZM12.0908 16.4545C13.2481 16.4545 14.358 15.9947 15.1764 15.1764C15.9947 14.358 16.4545 13.2481 16.4545 12.0908C16.4545 10.9335 15.9947 9.8236 15.1764 9.00526C14.358 8.18692 13.2481 7.72718 12.0908 7.72718C10.9335 7.72718 9.8236 8.18692 9.00526 9.00526C8.18692 9.8236 7.72718 10.9335 7.72718 12.0908C7.72718 13.2481 8.18692 14.358 9.00526 15.1764C9.8236 15.9947 10.9335 16.4545 12.0908 16.4545ZM10.9999 0.0908203H13.1817V3.36355H10.9999V0.0908203ZM10.9999 20.8181H13.1817V24.0908H10.9999V20.8181ZM2.83446 4.377L4.377 2.83446L6.69082 5.14828L5.14828 6.69082L2.83446 4.37809V4.377ZM17.4908 19.0334L19.0334 17.4908L21.3472 19.8046L19.8046 21.3472L17.4908 19.0334ZM19.8046 2.83337L21.3472 4.377L19.0334 6.69082L17.4908 5.14828L19.8046 2.83446V2.83337ZM5.14828 17.4908L6.69082 19.0334L4.377 21.3472L2.83446 19.8046L5.14828 17.4908ZM24.0908 10.9999V13.1817H20.8181V10.9999H24.0908ZM3.36355 10.9999V13.1817H0.0908203V10.9999H3.36355Z" fill=""/>
-              </svg>
-              <!-- Icon Sun -->
-              <!-- <img class="xc nm" src="images/icon-moon.svg" alt="Moon" />
-            </label>
-          </div> -->
-          <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            <a href="Model.html">Buy membership</a>
-          
-            </button>
-          <a href="signin.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Sign In</a>
-          <a href="signup.html" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi" style="background-color:#4E6BFF;" >Sign Up</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-    <!-- ===== Header End ===== -->
-
-    <main style="margin-top: 6rem;">
-
+    :class="{'b eh': darkMode === true}">
       
-      <!-- ===== Blog Single Start ===== -->
-      <section class="mb-10" style="margin-bottom: 5rem; ">
-        <div class="wiper flex flex-row w-full">
-          <button class="wiper-button wiper-button__right">
-            <!-- <img src="https://www.svgrepo.com/show/384730/rounded-square-arrow-indicator-left.svg" alt="left" /> -->
-
-            <svg fill="#ffffff" height="40px" width="40px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve" stroke="#ffffff" transform="matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path id="XMLID_222_" d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001 c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213 C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606 C255,161.018,253.42,157.202,250.606,154.389z"></path> </g></svg>
-          </button>
-          <div class="wiper-wrapper">
-            <ul class="wiper-track">
-
-              <!-- <img
-                class="wiper__image"
-                src="https://images.pexels.com/photos/19682307/pexels-photo-19682307/free-photo-of-pink-flowers-on-a-shrub.jpeg"
-                alt="background-image" -->
-                <!-- <div style="width:100%;height:0;padding-bottom:86%;position:relative;">
-                  <iframe src="https://media.tenor.com/ELtvRmeTcTYAAAAM/earth.gif" width="100%" height="100%" style="position:absolute" frameBorder="0"   ></iframe>
-                </div> -->
-
-              <!-- 1 card -->
-<li class="wiper-item ">
-<div>
-  <a href="#">
-    <div class="tenor-gif-embed" data-postid="10187006" data-share-method="host" data-aspect-ratio="1" data-width="100%">
-      <a href="https://tenor.com/view/monlight-gif-10187006">Maan GIF</a>from 
-      <a href="https://tenor.com/search/monlight-gifs">Monlight GIFs</a>
-    </div> 
-      <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-  </a>
-  <div class="p-5" style="padding: 0;">
-      <h3 class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-        <div class="flex flex-col align-center justify-center items-center w-full" style="display: flex;flex-wrap: wrap; justify-content: space-around; overflow: hidden;">
-          <div>
-            MERCURY  ENCYCLOPEDIA
-          </div>
-          <div>
-
-            EQUATORIAL DIAMETER = 4879 KM
-          </div>
-          <div>
-
-            MASS = 3.3 X 10^23 KG
-          </div>
-          <div>
-
-            MEAN DIST.FROM SUN 58.6 M KM
-          </div>
-          <div>
-            ROTATION PERIOD = 59 DAYS
-
-          </div>
-          <div>
-
-            SOLAR ORBIT PERIOD = 88 DAYS
-          </div>
-     <div>
-
-       SURFACE GRAVITY = 3.7 M/S^2
-     </div>
-     <div>
-
-       SURFACE TEMPERATURE = 167°C
-     </div>
-
-        </div>
-      </h3>
-  </div>
-</div>
-
-              </li>
-
-              <!-- 2 card -->
-              <li class="wiper-item active-swipe">
-                <div>
-                  <div style="height: 50%; padding-top: 3rem;"><a href="#">
-                    <div class="tenor-gif-embed " style="height: 50%;" data-postid="11554639948699783454" data-share-method="host" data-aspect-ratio="1.33155" data-width="100%"><a href="https://tenor.com/view/venus-gif-11554639948699783454">Venus GIF</a>from <a href="https://tenor.com/search/venus-gifs"
-                      style="margin-top: 24px;" >Venus GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-
-                  </a></div>
-                  <div class="p-5">
-                      <a href="#">
-                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"></h5>
-                      </a>
-                      <h3 class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                        <div class="flex flex-col align-center justify-center items-center w-full" style="    display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around; overflow: hidden;">
-          <div>
-            VENUS  ENCYCLOPEDIA
-          </div>
-          <div>
-
-            EQUATORIAL DIAMETER = 12 104 KM
-          </div>
-          <div>
-
-            MASS = 4.9 X 10^24 KG
-          </div>
-          <div>
-
-            MEAN DIST.FROM SUN =108 M KM
-          </div>
-          <div>
-            ROTATION PERIOD = 243 DAYS
-
-          </div>
-          <div>
-
-            SOLAR ORBIT PERIOD = 225 DAYS
-          </div>
-     <div>
-
-       SURFACE GRAVITY = 8.9 M/S^2
-     </div>
-     <div>
-
-       SURFACE TEMPERATURE = 462°C
-     </div>
-
-        </div>
-                      </h3>
-                  </div>
+    <!-- carousel -->
+    <div class="carousel">
+        <!-- list item -->
+        <div class="list">
+            <!-- Existing Items -->
+            <div class="item">
+                <img src="image/img5.jpeg">
+                <div class="content">
+                    <div class="author">Space Safari</div>
+                    <div class="title">VENUS</div>
+                    <div class="topic">PLANET</div>
+                    <div class="des">Venus, often referred to as Earth’s “sister planet” due to its similar size and proximity, is the second planet from the Sun and is known for its thick, toxic atmosphere primarily composed of carbon dioxide and nitrogen. With a diameter of about 7,520 miles (12,104 kilometers), it is nearly the same size as Earth. Venus has a surface temperature averaging around 900°F (475°C), making it the hottest planet in the solar system, primarily due to a runaway greenhouse effect. Its surface features include vast plains, volcanic mountains, and some of the largest volcanoes in the solar system. Venus rotates very slowly on its axis, taking about 243 Earth days to complete a single rotation, which is longer than its orbital period of 225 Earth days. Interestingly, Venus rotates in the opposite direction to most planets, causing the Sun to rise in the west and set in the east. The planet’s thick clouds reflect about 70% of sunlight, giving it a bright appearance from Earth, where it is often visible just before dawn or after sunset.
+                    </div>
+                    <div class="buttons">
+                      <a href="https://science.nasa.gov/venus/venus-facts/" target="_blank"><button style="color: darkblue;">SEE MORE</button></a>
+                    </div>
                 </div>
-
-              </li>
-
-              <!-- 3 card -->
-              <li class="wiper-item ">
-<div>
-  <a href="#">
-    <div class="tenor-gif-embed" data-postid="24606768" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/mars-gif-24606768">Mars Sticker</a>from <a href="https://tenor.com/search/mars-stickers">Mars Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-
-  </a>
-  <div class="p-5" style="padding: 0;">
-      <a href="#">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"></h5>
-      </a>
-      <h3 class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-        <div class="flex flex-col align-center justify-center items-center w-full" style="display: flex; margin-top: 0;
-        flex-wrap: wrap;
-        justify-content: space-around; overflow: hidden;">
-          <div>
-            MARS  ENCYCLOPEDIA
-          </div>
-          <div>
-
-            EQUATORIAL DIAMETER = 6792 KM
-          </div>
-          <div>
-
-            MASS = 6.4 X 10^23 KG
-          </div>
-          <div>
-
-            MEAN DIST.FROM SUN =228 M KM
-          </div>
-          <div>
-            ROTATION PERIOD = 1.03 DAYS
-
-          </div>
-          <div>
-
-            SOLAR ORBIT PERIOD = 1.88 YEAR
-          </div>
-     <div>
-
-       SURFACE GRAVITY = 3.7 M/S^2
-     </div>
-     <div>
-
-       SURFACE TEMPERATURE = -63°C
-     </div>
-
+            </div>
+            <div class="item">
+                <img src="image/img1.jpeg">
+                <div class="content">
+                    <div class="author">Space Safari</div>
+                    <div class="title">EARTH</div>
+                    <div class="topic">PLANET</div>
+                    <div class="des">Earth, the third planet from the Sun, is the only known celestial body to support life. With a diameter of about 7,918 miles (12,742 kilometers), it boasts a diverse range of ecosystems and climates, from lush rainforests to arid deserts. Approximately 71% of Earth’s surface is covered by water, primarily in the form of oceans, which play a crucial role in regulating the planet’s climate. Earth has a unique atmosphere composed of nitrogen, oxygen, and trace amounts of other gases, which support a wide variety of life forms. The planet rotates on its axis every 24 hours, creating day and night, while its elliptical orbit around the Sun takes about 365.25 days, defining a year. Earth’s geological features include mountains, valleys, plains, and a rich variety of minerals. The planet’s magnetic field protects it from solar radiation and cosmic events, creating a stable environment for life to flourish. Ongoing scientific research aims to understand Earth’s complex systems and how they interact, providing insights into climate change and the future of our planet.</div>
+                    <div class="buttons">
+                        <a href="https://science.nasa.gov/earth/facts/"><button style="color: darkblue;">SEE MORE</button></a>
+                        <!-- <button>SUBSCRIBE</button> -->
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img2.jpeg">
+                <div class="content">
+                    <div class="author">Space Safari</div>
+                    <div class="title">MOON</div>
+                    <div class="topic">EARTH'S MOON</div>
+                    <div class="des">Earth’s Moon is the fifth largest natural satellite in the solar system and Earth’s only natural satellite. It has a rocky composition, with a core made of iron and a mantle composed of silicate materials. Its surface is marked by craters, mountains, and large, flat plains known as “maria,” formed from ancient volcanic activity. The Moon lacks a significant atmosphere, meaning its surface is exposed to extreme temperatures, ranging from 127°C (260°F) during the day to -173°C (-280°F) at night. The Moon’s rotation period is synchronous with its orbit around Earth, both taking approximately 27.3 days. This is why the same side of the Moon always faces Earth, a phenomenon known as “tidal locking.” The time between full moons, known as the lunar cycle, is about 29.5 days due to Earth’s own movement around the Sun. The Moon’s gravitational force is about 1/6th that of Earth’s, at 1.62 m/s², which significantly affects Earth’s tides. Its gravity pulls on Earth’s oceans, causing the regular rise and fall of tides. Unlike Earth, the Moon has no magnetic field or atmosphere to protect it from cosmic radiation and meteoroids. Despite this, the Moon plays a crucial role in stabilizing Earth’s axial tilt, which helps regulate the planet’s climate over long periods. Its proximity and visibility have made it a focal point of human observation and exploration throughout history.</div>
+                    <div class="buttons">
+                      <a href="https://science.nasa.gov/moon/" target="_blank"><button style="color: darkblue;">SEE MORE</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img3.jpeg">
+                <div class="content">
+                    <div class="author">Space Safari</div>
+                    <div class="title">MARS</div>
+                    <div class="topic">PLANET</div>
+                    <div class="des">Mars, the fourth planet from the Sun, is often called the “Red Planet” due to its reddish appearance, caused by iron oxide, or rust, on its surface. With a diameter of about 4,220 miles (6,779 kilometers), Mars is roughly half the size of Earth. The planet has a thin atmosphere, primarily composed of carbon dioxide, with only trace amounts of oxygen and water vapor, making it inhospitable for human life. Mars features the largest volcano in the solar system, Olympus Mons, which stands nearly 13.6 miles (22 kilometers) high, and a vast canyon system called Valles Marineris, which stretches over 2,500 miles (4,000 kilometers). Evidence suggests that Mars once had liquid water on its surface, and researchers are actively exploring the possibility of past microbial life. The planet experiences seasons similar to Earth due to its axial tilt and has polar ice caps that grow and recede with the changing seasons. Mars is a prime target for future exploration and potential colonization, with numerous missions aimed at uncovering its mysteries.</div>
+                    <div class="buttons">
+                      <a href="https://science.nasa.gov/mars/facts/" target="_blank"><button style="color: darkblue;">SEE MORE</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img4.jpeg">
+                <div class="content">
+                    <div class="author">Space Safari</div>
+                    <div class="title">JUPITER</div>
+                    <div class="topic">PLANET</div>
+                    <div class="des">Jupiter, the largest planet in the solar system, is a gas giant with a diameter of about 86,881 miles (139,822 kilometers), more than 11 times that of Earth. Its massive atmosphere consists mostly of hydrogen and helium, with trace amounts of methane, ammonia, and other gases. One of Jupiter’s most distinctive features is the Great Red Spot, a giant storm larger than Earth that has persisted for centuries. The planet has a strong magnetic field and emits more energy than it receives from the Sun, likely due to internal heat generated from its massive size and gravitational compression. Jupiter has at least 79 known moons, including the four largest, known as the Galilean moons: Io, Europa, Ganymede, and Callisto. Each of these moons exhibits unique characteristics; for example, Europa is believed to have a subsurface ocean, making it a candidate for potential extraterrestrial life. Jupiter’s rapid rotation—completing a rotation in just under 10 hours—creates powerful winds and storms, contributing to its dynamic and ever-changing atmosphere.</div>
+                    <div class="buttons">
+                      <a href="https://science.nasa.gov/jupiter/jupiter-facts/" target="_blank"><button style="color: darkblue;">SEE MORE</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img8.jpeg">
+                <div class="content">
+                    <div class="author">Space Safari</div>
+                    <div class="title">SATURN</div>
+                    <div class="topic">THE RING PLANET</div>
+                    <div class="des">Saturn, the second-largest planet in the solar system, is renowned for its stunning ring system, which is composed of ice and rock particles. With a diameter of about 72,366 miles (116,460 kilometers), Saturn is a gas giant primarily made up of hydrogen and helium. The planet’s rings are the most extensive and complex in the solar system, stretching out thousands of miles from the planet’s equator. Saturn has a relatively low density; it could float on water if a large enough body existed. The planet is home to at least 83 known moons, with Titan being the largest, featuring a thick atmosphere and lakes of liquid methane. Saturn’s atmosphere exhibits strong winds and storms, with bands of clouds similar to Jupiter but with a more pastel color palette. The planet rotates quickly, completing a rotation approximately every 10.7 hours. Saturn’s unique beauty and the mysteries of its rings and moons make it a key focus for astronomical research and exploration.</div>
+                    <div class="buttons">
+                      <a href="https://science.nasa.gov/saturn/facts/" target="_blank"><button style="color: darkblue;">SEE MORE</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img10.jpeg">
+                <div class="content">
+                    <div class="author">Space Safari</div>
+                    <div class="title">URANUS</div>
+                    <div class="topic">PLANET</div>
+                    <div class="des">Uranus, the seventh planet from the Sun, is a unique ice giant with a diameter of about 31,518 miles (50,724 kilometers). It is known for its striking blue-green color, caused by methane in its atmosphere, which absorbs red light. Uranus is distinctive in that it rotates on its side, with an axial tilt of about 98 degrees, resulting in extreme seasons. One side of the planet experiences continuous sunlight for 42 years, while the other remains in darkness. Uranus has a relatively low density and is composed mainly of water, ammonia, and methane ices. The planet has a faint ring system and at least 27 known moons, including Titania, Oberon, and Miranda, each exhibiting diverse geological features. Uranus is the coldest planet in the solar system, with temperatures dropping to around -370°F (-224°C). Despite its distance from the Sun, Uranus has a magnetic field tilted significantly from its rotational axis, adding to its unique characteristics. The planet remains less explored than its larger counterpart, Jupiter, yet continues to intrigue scientists with its mysteries.
+                    </div>
+                    <div class="buttons">
+                      <a href="https://science.nasa.gov/uranus/facts/" target="_blank"><button style="color: darkblue;">SEE MORE</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img7.jpeg">
+                <div class="content">
+                    <div class="author">Space Safari</div>
+                    <div class="title">NEPTUNE</div>
+                    <div class="topic">PLANET</div>
+                    <div class="des">Neptune, the eighth and farthest planet from the Sun, is known for its striking deep blue color and strong winds, making it one of the most dynamic planets in the solar system. With a diameter of about 30,598 miles (49,244 kilometers), Neptune is an ice giant primarily composed of hydrogen, helium, and methane. The planet experiences some of the fastest winds in the solar system, reaching speeds of up to 1,200 miles per hour (2,000 kilometers per hour). Neptune has a faint ring system and at least 14 known moons, with Triton being the largest, showcasing geysers that erupt nitrogen gas. The planet’s atmosphere features storm systems, including the Great Dark Spot, which is similar to Jupiter’s Great Red Spot but more ephemeral. Neptune’s distance from the Sun results in a long orbital period of about 165 Earth years, and its year is characterized by extreme seasonal changes. Despite being discovered in 1846, Neptune remains a subject of scientific fascination, with ongoing studies aiming to understand its atmospheric dynamics and unique features.</div>
+                    <div class="buttons">
+                      <a href="https://science.nasa.gov/neptune/neptune-facts/" target="_blank"><button style="color: darkblue;">SEE MORE</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img9.jpeg">
+                <div class="content">
+                    <div class="author">Space Safari</div>
+                    <div class="title">MERCURY</div>
+                    <div class="topic">PLANET</div>
+                    <div class="des">Mercury, the closest planet to the Sun, is a small and rocky world characterized by extreme temperature fluctuations. With a diameter of about 3,032 miles (4,880 kilometers), it is the smallest planet in the solar system. Mercury has a thin atmosphere, which is insufficient to retain heat, causing daytime temperatures to soar to around 800°F (427°C) while plunging to nearly -330°F (-201°C) at night. The planet’s surface is marked by craters, similar to Earth’s Moon, due to its lack of protective atmosphere. Mercury’s year is shorter than its day; it takes only 88 Earth days to complete an orbit around the Sun but rotates on its axis once every 59 Earth days. The planet has no moons, and its swift orbit creates a unique phenomenon where it appears to move backward in the sky at times, known as retrograde motion. Despite its inhospitable conditions, Mercury offers valuable insights into planetary formation and evolution, making it a target for scientific exploration.</div>
+                    <div class="buttons">
+                      <a href="https://science.nasa.gov/mercury/facts/" target="_blank"><button style="color: darkblue;">SEE MORE</button></a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </h3>
-  </div>
-</div>
-
-              </li>
-
-              <!-- 4 card -->
-              <li class="wiper-item ">
-<div>
-  <a href="#">
-    <div class="tenor-gif-embed" data-postid="24433337" data-share-method="host" data-aspect-ratio="1.01266" data-width="100%" style="    width: 397px;
-    aspect-ratio: auto 397 / 392;
-    height: 392px;"><a href="https://tenor.com/view/earth-gif-24433337">Earth GIF</a>from <a href="https://tenor.com/search/earth-gifs">Earth GIFs</a>
+    
+        <!-- list thumbnail -->
+        <div class="thumbnail">
+            <div class="item">
+                <img src="image/img9.jpeg">
+                <div class="content">
+                    <div class="title">MERCURY</div>
+                    <div class="description">“Closest Planet to the Sun”</div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img5.jpeg">
+                <div class="content">
+                    <div class="title">VENUS</div>
+                    <div class="description">“Earth’s Sister Planet”</div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img1.jpeg">
+                <div class="content">
+                    <div class="title">EARTH</div>
+                    <div class="description">“The Blue Planet”</div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img2.jpeg">
+                <div class="content">
+                    <div class="title">MOON</div>
+                    <div class="description">“Earth’s Satellite”</div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img3.jpeg">
+                <div class="content">
+                    <div class="title">MARS</div>
+                    <div class="description">“The Red Planet”</div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img4.jpeg">
+                <div class="content">
+                    <div class="title">JUPITER</div>
+                    <div class="description">“The Giant Planet”</div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img8.jpeg">
+                <div class="content">
+                    <div class="title">SATURN</div>
+                    <div class="description">“The Ringed Planet”</div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img10.jpeg">
+                <div class="content">
+                    <div class="title">URANUS</div>
+                    <div class="description">“The Ice Giant”</div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img7.jpeg">
+                <div class="content">
+                    <div class="title">NEPTUNE</div>
+                    <div class="description">“The Windy Planet”</div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- next prev -->
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+    
+        <!-- time running -->
+        <div class="time"></div>
     </div>
-     <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
-  </a>
-  <div class="p-5"style="padding: 0;">
-      <a href="#">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"></h5>
-      </a>
-      <h3 class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-        <div class="flex flex-col align-center justify-center items-center w-full" style="    display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around; overflow: hidden;">
-          <div>
-            EARTH  ENCYCLOPEDIA
-          </div>
-          <div>
-
-            EQUATORIAL DIAMETER = 12 756 KM
-          </div>
-          <div>
-
-            MASS = 6 X 1024 KG
-          </div>
-          <div>
-
-            MEAN DIST.FROM SUN =150 M KM
-          </div>
-          <div>
-            ROTATION PERIOD = 23H 56M
-
-          </div>
-          <div>
-
-            SOLAR ORBIT PERIOD = I YEAR
-          </div>
-     <div>
-
-       SURFACE GRAVITY = 9.8 M/SE
-     </div>
-     <div>
-
-       SURFACE TEMPERATURE = 15°C
-     </div>
-
-        </div>
-      </h3>
-  </div>
-</div>
-
-              </li>
-
-              <!-- 5 card -->
-              <li class="wiper-item ">
-<div>
-  <a href="#">
-    <div class="tenor-gif-embed" data-postid="10084528" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/nasa-nasa-gifs-jupiter-spin-planet-gif-10084528">Nasa Nasa Gifs GIF</a>from <a href="https://tenor.com/search/nasa-gifs">Nasa GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-
-  </a>
-  <div class="p-5"style="padding: 0;">
-      <a href="#">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"></h5>
-      </a>
-      <h3 class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-        <div class="flex flex-col align-center justify-center items-center w-full" style="    display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around; overflow: hidden;">
-          <div>
-            JUPITER  ENCYCLOPEDIA
-          </div>
-          <div>
-
-            EQUATORIAL DIAMETER = 142 984 KM
-          </div>
-          <div>
-
-            MASS = 1.9 X 10^27 KG
-          </div>
-          <div>
-
-            MEAN DIST.FROM SUN = 779 M KM
-          </div>
-          <div>
-            ROTATION PERIOD = 9H 55M
-
-          </div>
-          <div>
-
-            SOLAR ORBIT PERIOD = 11.9 YEAR
-          </div>
-     <div>
-
-       SURFACE GRAVITY = 25 M/S^2
-     </div>
-     <div>
-
-       SURFACE TEMPERATURE = -120°C
-     </div>
-
-        </div>
-      </h3>
-  </div>
-</div>
-
-              </li>
-
-              <!-- 6 card -->
-              <li class="wiper-item ">
-<div>
-  <a href="#">
-    <div class="tenor-gif-embed" data-postid="6885243750696499349" data-share-method="host" data-aspect-ratio="1.33333" data-width="100%"><a href="https://tenor.com/view/mercury-space-galaxy-gif-6885243750696499349">Mercury Space GIF</a>from <a href="https://tenor.com/search/mercury-gifs">Mercury GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-
-  </a>
-  <div class="p-5"style="padding: 0;">
-      <a href="#">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"></h5>
-      </a>
-      <h3 class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-        <div class="flex flex-col align-center justify-center items-center w-full" style="    display: flex;
-        flex-wrap: wrap; margin-top: 5rem;
-        justify-content: space-around; overflow: hidden;">
-          <div>
-            SATURN ENCYCLOPEDIA
-          </div>
-          <div>
-
-            EQUATORIAL DIAMETER = 120 536 KM
-          </div>
-          <div>
-
-            MASS = 5.7 X 10^26 KG
-          </div>
-          <div>
-
-            MEAN DIST.FROM SUN = 9.58 AU
-          </div>
-          <div>
-            ROTATION PERIOD = 10H 39M
-
-          </div>
-          <div>
-
-            SOLAR ORBIT PERIOD = 29 YEARS
-          </div>
-     <div>
-
-       SURFACE GRAVITY = 10.4 M/S^2
-     </div>
-     <div>
-
-       SURFACE TEMPERATURE = -125°C
-     </div>
-
-        </div>
-      </h3>
-  </div>
-</div>
-
-              </li>
-
-              <!-- 7 card -->
-              <li class="wiper-item ">
-                <div>
-                  <a href="#">
-                    <div class="tenor-gif-embed" data-postid="706835586399852888" data-share-method="host" data-aspect-ratio="1.00457" data-width="100%"><a href="https://tenor.com/view/uranus-planet-spinning-gif-706835586399852888">Uranus Planet GIF</a>from <a href="https://tenor.com/search/uranus-gifs">Uranus GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-
-                  </a>
-                  <div class="p-5"style="padding: 0;">
-                      <a href="#">
-                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"></h5>
-                      </a>
-                      <h3 class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                        <div class="flex flex-col align-center justify-center items-center w-full" style="    display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around; overflow: hidden;">
-          <div>
-            URANUS  ENCYCLOPEDIA
-          </div>
-          <div>
-
-            EQUATORIAL DIAMETER = 51 118 KM
-          </div>
-          <div>
-
-            MASS = 8.7 X 10^25KG
-          </div>
-          <div>
-
-            MEAN DIST.FROM SUN = 19.2 AU
-          </div>
-          <div>
-            ROTATION PERIOD = 17H 14M
-
-          </div>
-          <div>
-
-            SOLAR ORBIT PERIOD = 84 YEARS
-          </div>
-     <div>
-
-       SURFACE GRAVITY = 8.7 M/S^2
-     </div>
-     <div>
-
-       SURFACE TEMPERATURE = -210°C
-     </div>
-
-        </div>
-                      </h3>
-                  </div>
-                </div>
-
-                              </li>
-
-                              <!-- 8 card -->
-              <li class="wiper-item ">
-                <div>
-                  <a href="#">
-                    <div class="tenor-gif-embed" data-postid="27658372" data-share-method="host" data-aspect-ratio="1.0356" data-width="100%"><a href="https://tenor.com/view/neptune-rotate-rotation-planet-space-gif-27658372">Neptune Rotate Sticker</a>from <a href="https://tenor.com/search/neptune-stickers">Neptune Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-
-                  </a>
-                  <div class="p-2">
-                      <h3 class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                        <div class="flex flex-col align-center justify-center items-center w-full" style="    display: flex;
-                        flex-wrap: wrap;
-                        justify-content: space-around; overflow: hidden;">
-                          <div>
-                             NEPTUNE ENCYCLOPEDIA
-                          </div>
-                          <div>
-
-                            EQUATORIAL DIAMETER = 49 528 KM
-                          </div>
-                          <div>
-
-                            MASS = 1.02 X 10^26KG
-                          </div>
-                          <div>
-
-                            MEAN DIST.FROM SUN = 30.1 AU
-                          </div>
-                          <div>
-                            ROTATION PERIOD = 16H 06M
-
-                          </div>
-                          <div>
-
-                            SOLAR ORBIT PERIOD = 165 YEAR
-                          </div>
-                     <div>
-
-                       SURFACE GRAVITY = 11.2 M/S^2
-                     </div>
-                     <div>
-
-                       SURFACE TEMPERATURE = -200 °C
-                     </div>
-
-                        </div>
-                      </h3>
-                  </div>
-                </div>
-
-                              </li>
-
-
-            </ul>
-          </div>
-          <button class="wiper-button wiper-button__left">
-            <svg fill="#ffffff" height="40px" width="40px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path id="XMLID_222_" d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001 c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213 C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606 C255,161.018,253.42,157.202,250.606,154.389z"></path> </g></svg>
-
-          </button>
-        </div>
-      </section>
-      <!-- ===== Blog Single End ===== -->
-
-      <!-- ===== CTA Start ===== -->
-      <section class="i pg gh ji">
-  <!-- Bg Shape -->
-  <img class="h p q" src="images/shape-16.svg" alt="Bg Shape" />
-
-  <div class="bb ye i z-10 ki xn dr">
-    <div class="tc uf sn tn un gg">
-      <div class="animate_left to/2">
-        <h2 class="fk vj zp pr lk ac">
-           🌟Most habitable planet other than earth -
-        </h2>
-        <p class="lk">
-          1,400 light-years away lies Kepler-452b, a super-Earth in the habitable zone of a sun-like star. 60% larger than Earth, it's likely rocky with a thicker atmosphere.  This "Earth 2.0" could potentially hold liquid water, a key ingredient for life.  Scientists are eagerly studying it, hoping to unlock secrets about its atmosphere, moons, and the possibility of a protective magnetic field.  While not an exact Earth twin, Kepler-452b fuels the fire in the search for habitable worlds beyond our solar system.
-        </p>
-      </div>
-      <div class="animate_right bf"style="display: flex;flex-direction: column; justify-content: center; align-items: center;">
-        <img style="height: 20rem; margin-bottom: 2rem; border-radius: 1rem;" src="https://c4.wallpaperflare.com/wallpaper/313/365/84/5bd1ebecef043-wallpaper-preview.jpg" alt="">
-        <a style="width: 12rem;"href="https://en.wikipedia.org/wiki/Kepler-452b" class="vc ek kk hh rg ol il cm gi hi">
-            Explore more 🔗
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-      <!-- ===== CTA End ===== -->
-    </main>
+    <script>// Step 1: Get DOM elements
+      const nextDom = document.getElementById('next');
+      const prevDom = document.getElementById('prev');
+      const carouselDom = document.querySelector('.carousel');
+      const sliderDom = carouselDom.querySelector('.list');
+      const thumbnailBorderDom = carouselDom.querySelector('.thumbnail');
+      const thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
+      const timeDom = carouselDom.querySelector('.time');
+      
+      thumbnailBorderDom.appendChild(thumbnailItemsDom[0]); // Append first thumbnail
+      
+      // Timing settings
+      const timeRunning = 3000; // Time for transition
+      const timeAutoNext = 7000; // Time between automatic slides
+      
+      // Arrow click event listeners
+      nextDom.onclick = () => showSlider('next');
+      prevDom.onclick = () => showSlider('prev');
+      
+      let runTimeOut;
+      let runNextAuto = setTimeout(autoNextSlide, timeAutoNext);
+      
+      function autoNextSlide() {
+          nextDom.click();
+      }
+      
+      function showSlider(type) {
+          const sliderItemsDom = sliderDom.querySelectorAll('.carousel .list .item');
+          const thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
+      
+          if (type === 'next') {
+              // Move first slider item and thumbnail to the end
+              sliderDom.appendChild(sliderItemsDom[0]);
+              thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+              carouselDom.classList.add('next');
+          } else {
+              // Move last slider item and thumbnail to the beginning
+              sliderDom.prepend(sliderItemsDom[sliderItemsDom.length - 1]);
+              thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
+              carouselDom.classList.add('prev');
+          }
+      
+          // Fade out the current content
+          fadeOutCurrentContent(sliderItemsDom[0]);
+      
+          // Clear any running timeout for the transition
+          clearTimeout(runTimeOut);
+          runTimeOut = setTimeout(() => {
+              carouselDom.classList.remove('next', 'prev');
+          }, timeRunning);
+      
+          // Reset auto-slide timer
+          clearTimeout(runNextAuto);
+          runNextAuto = setTimeout(autoNextSlide, timeAutoNext);
+      }
+      
+      function fadeOutCurrentContent(currentItem) {
+          currentItem.querySelector('.content').style.opacity = 0;
+      }
+      </script>
+</body>
+</html>
     <!-- ===== Footer Start ===== -->
     <footer>
       <div class="bb ze ki xn 2xl:ud-px-0">
